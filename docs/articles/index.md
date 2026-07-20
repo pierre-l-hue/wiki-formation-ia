@@ -1,3 +1,3 @@
 # Articles
 
-L'IA avance répidement, cet espace sera là pour rajouter des articles mis à jour en fonction des dernières évolutions
+L'IA avance rapidement, cet espace sera mis à jour avec des articles en fonction des dernières évolutions
