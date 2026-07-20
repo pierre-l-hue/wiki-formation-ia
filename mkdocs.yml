@@ -1,0 +1,65 @@
+site_name: Wiki Formation IA générative
+site_description: Ressources de la formation IA générative — Certification RS6776
+docs_dir: docs
+
+theme:
+  name: material
+  language: fr
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Passer en mode sombre
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Passer en mode clair
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.integrate
+
+nav:
+  - Accueil: index.md
+  - Formation:
+      - H0 — Lancement: formation/h0.md
+      - H1 — Fondamentaux IA + ROFT: formation/h1.md
+      - H2 — Stratégie d'implémentation IA: formation/h2.md
+      - H3 — Structurer un prompt efficace: formation/h3.md
+      - H4 — Créer des visuels attractifs: formation/h4.md
+      - H5 — Confidentialité et sécurité: formation/h5.md
+      - H6 — Accessibilité et inclusivité: formation/h6.md
+      - H7 — Éthique, IA Act, biais: formation/h7.md
+  - Fiches outils:
+      - ChatGPT: outils/chatgpt.md
+      - Claude: outils/claude.md
+      - Gemini: outils/gemini.md
+      - Mistral: outils/mistral.md
+      - Copilot: outils/copilot.md
+      - Perplexity: outils/perplexity.md
+      - 4D Fluency: outils/4d-fluency.md
+  - Glossaire: glossaire.md
+  - Articles:
+      - Vue d'ensemble: articles/index.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+
+plugins:
+  - search:
+      lang: fr
