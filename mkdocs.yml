@@ -44,8 +44,10 @@ nav:
       - H5 — Confidentialité et sécurité: formation/h5.md
       - H6 — Accessibilité et inclusivité: formation/h6.md
       - H7 — Éthique, IA Act, biais: formation/h7.md
+  - Certification RS6776:
       - Quiz final: formation/Quiz final.md
   - Fiches outils:
+      - Comparatif LLM: outils/comparatif.md
       - ChatGPT: outils/chatgpt.md
       - Claude: outils/claude.md
       - Gemini: outils/gemini.md
@@ -65,6 +67,11 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
 
 plugins:
   - search:
