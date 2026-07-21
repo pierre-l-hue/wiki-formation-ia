@@ -44,7 +44,7 @@ nav:
       - H5 — Confidentialité et sécurité: formation/h5.md
       - H6 — Accessibilité et inclusivité: formation/h6.md
       - H7 — Éthique, IA Act, biais: formation/h7.md
-  - Certification RS6776: formation/Quiz final.md
+      - Certification RS6776: formation/Quiz final.md
   - Fiches outils:
       - Comparatif LLM: outils/comparatif.md
       - ChatGPT: outils/chatgpt.md
