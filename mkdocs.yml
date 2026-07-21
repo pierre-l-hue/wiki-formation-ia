@@ -32,7 +32,8 @@ theme:
 
 extra_files:
   - assets/jeu-next-token.html
-
+extra_javascript:
+  - javascripts/progress.js
 nav:
   - Accueil: index.md
   - Formation:
