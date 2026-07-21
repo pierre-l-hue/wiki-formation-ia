@@ -30,6 +30,9 @@ theme:
     - content.code.copy
     - toc.integrate
 
+extra_files:
+  - assets/jeu-next-token.html
+
 nav:
   - Accueil: index.md
   - Formation:
