@@ -6,6 +6,8 @@ theme:
   name: material
   logo: assets/logo.png
   favicon: assets/logo.png
+  text: Poppins       # Police pour tout le texte courant et les titres
+  code: Roboto Mono   # Police pour les blocs de code (recommandé de garder une police monospace)
   language: fr
   palette:
     - scheme: default
