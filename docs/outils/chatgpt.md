@@ -1,49 +1,64 @@
 # ChatGPT
 
-*Un outil très polyvalent pour écrire, apprendre, créer, chercher des idées et résoudre des problèmes du quotidien*
+*Un assistant généraliste et polyvalent pour écrire, apprendre, créer, rechercher des idées et résoudre des problèmes du quotidien.*
 
-## À quoi sert ChatGPT ?
+---
 
-- **Écrire** — rédiger, reformuler, corriger, améliorer des textes
-- **Apprendre** — expliquer un sujet, répondre à des questions
-- **Chercher des idées** — brainstormer, préparer un plan, débloquer un premier jet
-- **Résoudre des problèmes** — rédaction, code, organisation, préparation de contenus
-- **Dialoguer facilement** — poser une question, puis préciser et améliorer au fil de l'échange
+## 🎯 À quoi sert ChatGPT ?
 
-## Ce que ChatGPT fait bien
+- **Écrire** — Rédiger, reformuler, corriger, adapter et améliorer tous vos textes.
+- **Apprendre** — Expliquer un sujet complexe, vulgariser des notions, répondre à vos questions.
+- **Chercher des idées** — Brainstormer, préparer un plan, débloquer un premier jet rapidement.
+- **Résoudre des problèmes** — Structurer des données, coder, organiser un projet, préparer des contenus.
+- **Dialoguer facilement** — Poser une première question, puis préciser et affiner au fil de l'échange.
 
-- Démarrer vite : poser une question, obtenir une première réponse, rebondir tout de suite
-- Couvrir beaucoup d'usages : écriture, apprentissage, idées, code
-- **ChatGPT Search** — réponses actuelles avec liens vers des sources web
-- Plusieurs modes : texte, voix, images
-- **GPTs** — configurer un assistant dédié pour un besoin précis
+---
 
-## 5 exemples de demandes utiles
+## 🔄 Comment l'utiliser efficacement ? (Méthode pas à pas)
+1. **Poser le cadre (Rôle & Contexte)** : Donnez une consigne claire dès le départ *(ex: « Tu es rédacteur web... »)*.
+2. **Obtenir le premier jet** : Laissez l'IA générer une proposition initiale sans chercher la perfection immédiate.
+3. **Dialoguer et ajuster** : Précisez votre besoin au fil de l'échange *(ex: « Rends le ton plus dynamique », « Raccourcis de moitié »)*.
+4. **Automatiser** : Si la tâche revient souvent, enregistrez vos consignes dans un **GPT personnalisé**.
 
-- « Rédige un mail professionnel pour relancer un client après une absence de réponse, en 120 mots maximum »
-- « Fais-moi un plan en 5 parties pour animer un atelier d'initiation à l'IA pour débutants »
-- « Explique-moi simplement la différence entre un tableur, une base de données et un CRM, avec un exemple pour chacun »
-- « Recherche des informations récentes sur un sujet et donne-moi les liens vers les sources les plus utiles »
-- « Aide-moi à définir un GPT qui m'aide à reformuler mes mails professionnels avec un ton clair et poli »
+---
 
-## Les limites de ChatGPT
+## 🧭 Bien utiliser ChatGPT selon le besoin
 
-- Les fonctions varient selon le plan (mémoire, recherche approfondie, génération d'images)
-- La version gratuite est plafonnée sur les messages et fichiers
-- Créer ou modifier un GPT demande un abonnement payant
-- Outil très large, donc parfois dispersant pour un débutant
+| Votre objectif | La fonctionnalité à utiliser | Comment procéder dans l'interface ? |
+| :--- | :--- | :--- |
+| **Obtenir des informations actuelles** | **ChatGPT Search** | Cliquez sur l'icône 🌐 (*Rechercher*) sous la zone de texte pour obtenir des sources web récentes. |
+| **Échanger rapidement à l'oral** | **Mode Voix** *(Application)* | Activez l'icône 🎧 (*Casque*) pour échanger naturellement à voix haute (idéal pour le brainstorm). |
+| **Créer un assistant sur-mesure** | **GPTs dédiés** | Allez dans le menu latéral > *Explorer les GPTs* pour configurer une tâche récurrente. |
 
-## Bien utiliser ChatGPT selon le besoin
+---
 
-- **Search** pour les informations récentes
-- **Un GPT dédié** pour les tâches répétitives
-- **La voix** pour aller plus vite (brainstorm, pratique orale)
+## 💬 5 Exemples de demandes utiles (Prompts à tester)
 
-!!! example "Exemple"
-    Pour une veille métier, utilisez Search ; pour un assistant mail récurrent, créez plutôt un GPT dédié.
+!!! example "1. Rédaction de mail professionnel"
+    > *"Rédige un mail professionnel pour relancer un client après une absence de réponse de sa part, en 120 mots maximum."*
 
-## Bonnes pratiques
+!!! example "2. Animation et ingénierie pédagogique"
+    > *"Fais-moi un plan en 5 parties pour animer un atelier d'initiation à l'intelligence artificielle pour des débutants."*
 
-- Commencer simplement, puis préciser la demande
-- Utiliser Search quand le sujet dépend de l'actualité
-- Créer un GPT quand la même tâche revient souvent
+!!! example "3. Vulgarisation et pédagogie"
+    > *"Explique-moi simplement la différence entre un tableur, une base de données et un CRM, avec un exemple pour chacun."*
+
+!!! example "4. Veille et recherche d'actualités (Search)"
+    > *"Recherche des informations récentes sur [Sujet] et donne-moi une synthèse claire accompagnée des liens vers les sources les plus utiles."*
+
+!!! example "5. Configuration d'un assistant dédié"
+    > *"Aide-moi à définir les instructions d'un GPT qui m'aidera à reformuler mes mails professionnels avec un ton clair, synthétique et poli."*
+
+---
+
+## ⚠️ Limites & Points d'attention
+
+- **Variabilité des fonctions** : L'accès à la mémoire, la recherche approfondie ou la génération d'images dépend du plan souscrit.
+- **Plafonnement de la version gratuite** : Le volume de messages quotidiens et l'analyse de fichiers lourds y sont limités.
+- **Création de GPTs** : La création et la personnalisation de ses propres GPTs nécessitent un abonnement payant.
+- **Posture de départ** : Outil très large et généraliste, qui peut parfois sembler dispersant lors des premières utilisations.
+
+---
+
+!!! tip "La règle d'or d'utilisation"
+    Commencez toujours simplement, puis précisez votre demande. Utilisez **Search** pour tout ce qui touche à l'actualité, et créez un **GPT dédié** dès qu'une tâche devient répétitive.
