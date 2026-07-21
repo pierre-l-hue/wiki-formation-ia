@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 2. BOUTON EN BAS DE PAGE
+  // 2. BOUTON BASCULE (TOGGLE) EN BAS DE PAGE
   if (article && currentPageKey) {
     let btnContainer = document.getElementById("lesson-completion-container");
     if (!btnContainer) {
@@ -44,28 +44,46 @@ document.addEventListener("DOMContentLoaded", function () {
       btnContainer.id = "lesson-completion-container";
       btnContainer.style.cssText = "margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;";
 
-      const isAlreadyViewed = viewedPages.includes(currentPageKey);
-
       const statusText = document.createElement("span");
       statusText.id = "lesson-status-text";
       statusText.style.cssText = "font-size: 13px; color: #666; font-weight: 500;";
-      statusText.textContent = isAlreadyViewed ? "Statut : Leçon validée ✅" : "Statut : Non terminée ⚪";
 
       const btn = document.createElement("button");
+      btn.id = "lesson-toggle-btn";
       btn.className = "md-button md-button--primary";
-      btn.style.cssText = "cursor: pointer; font-size: 13px;";
-      btn.textContent = isAlreadyViewed ? "✅ Leçon terminée" : "⚪ Marquer comme lue";
+      btn.style.cssText = "cursor: pointer; font-size: 13px; transition: all 0.2s ease;";
+
+      // Fonction pour rafraîchir l'état visuel du bouton
+      function updateButtonUI() {
+        const isAlreadyViewed = viewedPages.includes(currentPageKey);
+        if (isAlreadyViewed) {
+          btn.textContent = "✅ Leçon terminée (Cliquer pour décocher)";
+          statusText.textContent = "Statut : Leçon validée ✅";
+          btn.style.background = "#2e7d32"; // Vert foncé
+          btn.style.borderColor = "#2e7d32";
+        } else {
+          btn.textContent = "⚪ Marquer comme lue";
+          statusText.textContent = "Statut : Non terminée ⚪";
+          btn.style.background = ""; // Style par défaut du thème
+          btn.style.borderColor = "";
+        }
+      }
 
       btn.addEventListener("click", function () {
-        if (!viewedPages.includes(currentPageKey)) {
+        const index = viewedPages.indexOf(currentPageKey);
+        if (index > -1) {
+          // Si déjà vue -> On décoche
+          viewedPages.splice(index, 1);
+        } else {
+          // Si non vue -> On ajoute
           viewedPages.push(currentPageKey);
-          localStorage.setItem("wiki_viewed_pages", JSON.stringify(viewedPages));
-          btn.textContent = "✅ Leçon terminée";
-          statusText.textContent = "Statut : Leçon validée ✅";
-          updateAll();
         }
+        localStorage.setItem("wiki_viewed_pages", JSON.stringify(viewedPages));
+        updateButtonUI();
+        updateAll();
       });
 
+      updateButtonUI();
       btnContainer.appendChild(statusText);
       btnContainer.appendChild(btn);
       article.appendChild(btnContainer);
@@ -77,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let progressBox = document.getElementById("global-progress-box");
     
     if (!progressBox) {
-      // Cherche la navigation principale dans le panneau latéral
       const nav = document.querySelector(".md-sidebar--primary .md-sidebar__scrollwrap") || document.querySelector(".md-nav");
       if (nav) {
         progressBox = document.createElement("div");
@@ -105,19 +122,28 @@ document.addEventListener("DOMContentLoaded", function () {
     if (barEl) barEl.style.width = `${percent}%`;
   }
 
-  // 4. INJECTION DES COCHES DANS LE MENU LATÉRAL
+  // 4. MISE À JOUR DES COCHES DANS LE MENU LATÉRAL
   function markMenuLinks() {
     document.querySelectorAll(".md-nav__link").forEach(link => {
       const href = normalizePath(link.getAttribute("href") || "");
       
       formationPages.forEach(key => {
-        if (href.includes(key) && viewedPages.includes(key)) {
-          if (!link.querySelector(".check-mark")) {
-            const check = document.createElement("span");
-            check.className = "check-mark";
-            check.style.cssText = "margin-left: auto; color: #4a9b5e; font-weight: bold; font-size: 13px;";
-            check.textContent = " ✓";
-            link.appendChild(check);
+        if (href.includes(key)) {
+          const existingCheck = link.querySelector(".check-mark");
+          if (viewedPages.includes(key)) {
+            // Ajouter la coche si elle n'existe pas déjà
+            if (!existingCheck) {
+              const check = document.createElement("span");
+              check.className = "check-mark";
+              check.style.cssText = "margin-left: auto; color: #4a9b5e; font-weight: bold; font-size: 13px;";
+              check.textContent = " ✓";
+              link.appendChild(check);
+            }
+          } else {
+            // Supprimer la coche si elle était présente
+            if (existingCheck) {
+              existingCheck.remove();
+            }
           }
         }
       });
