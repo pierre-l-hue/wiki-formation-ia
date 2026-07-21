@@ -1,69 +1,88 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const formationPages = [
-    "h0", "h1", "h2", "h3", "h4", "h5", "h6", "h7", "Quiz%20final"
-  ];
+  // Liste des identifiants uniques de leçons (en minuscules sans accents/espaces)
+  const formationPages = ["h0", "h1", "h2", "h3", "h4", "h5", "h6", "h7", "quiz"];
+
+  // Fonction utilitaire pour normaliser les URL
+  function normalizePath(str) {
+    if (!str) return "";
+    return decodeURIComponent(str)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // Supprime les accents
+      .replace(/\s+/g, "-");          // Remplace les espaces par des tirets
+  }
 
   let viewedPages = JSON.parse(localStorage.getItem("wiki_viewed_pages") || "[]");
-  const currentPath = window.location.pathname;
+  const currentPath = normalizePath(window.location.pathname);
 
-  // 1. GESTION DU TEMPS DE LECTURE DE LA PAGE ACTUELLE
+  // Détection de la page actuelle
+  const currentPageKey = formationPages.find(key => currentPath.includes(key));
+
   const article = document.querySelector(".md-content__inner");
-  if (article && currentPath.includes("/formation/")) {
+
+  // 1. TEMPS DE LECTURE ESTIMÉ
+  if (article && (currentPath.includes("/formation/") || currentPageKey)) {
     const text = article.innerText || "";
     const wordCount = text.trim().split(/\s+/).length;
     const readingTimeMinutes = Math.max(1, Math.ceil(wordCount / 200));
 
-    // Insertion d'un petit badge "Temps de lecture" sous le titre H1
     const h1 = article.querySelector("h1");
-    if (h1) {
+    if (h1 && !article.querySelector(".reading-time-badge")) {
       const timeBadge = document.createElement("div");
+      timeBadge.className = "reading-time-badge";
       timeBadge.style.cssText = "display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #1a5fb4; background: #eef4fb; padding: 4px 10px; border-radius: 12px; margin-top: 8px; margin-bottom: 16px;";
       timeBadge.innerHTML = `⏱️ Temps de lecture estimé : ~${readingTimeMinutes} min (${wordCount} mots)`;
       h1.insertAdjacentElement('afterend', timeBadge);
     }
   }
 
-  // 2. AJOUT DU BOUTON EN BAS DE PAGE
-  if (article && currentPath.includes("/formation/")) {
-    const btnContainer = document.createElement("div");
-    btnContainer.style.cssText = "margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;";
-    
-    const isAlreadyViewed = viewedPages.some(p => currentPath.includes(p));
+  // 2. BOUTON EN BAS DE PAGE
+  if (article && currentPageKey) {
+    let btnContainer = document.getElementById("lesson-completion-container");
+    if (!btnContainer) {
+      btnContainer = document.createElement("div");
+      btnContainer.id = "lesson-completion-container";
+      btnContainer.style.cssText = "margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;";
 
-    const statusText = document.createElement("span");
-    statusText.style.cssText = "font-size: 13px; color: #666; font-weight: 500;";
-    statusText.textContent = isAlreadyViewed ? "Statut : Leçon validée ✅" : "Statut : Non terminée ⚪";
+      const isAlreadyViewed = viewedPages.includes(currentPageKey);
 
-    const btn = document.createElement("button");
-    btn.className = "md-button md-button--primary";
-    btn.style.cssText = "cursor: pointer; font-size: 13px;";
-    btn.textContent = isAlreadyViewed ? "✅ Leçon terminée" : "⚪ Marquer comme lue";
+      const statusText = document.createElement("span");
+      statusText.id = "lesson-status-text";
+      statusText.style.cssText = "font-size: 13px; color: #666; font-weight: 500;";
+      statusText.textContent = isAlreadyViewed ? "Statut : Leçon validée ✅" : "Statut : Non terminée ⚪";
 
-    btn.addEventListener("click", function () {
-      const pageKey = formationPages.find(p => currentPath.includes(p));
-      if (pageKey && !viewedPages.includes(pageKey)) {
-        viewedPages.push(pageKey);
-        localStorage.setItem("wiki_viewed_pages", JSON.stringify(viewedPages));
-        btn.textContent = "✅ Leçon terminée";
-        statusText.textContent = "Statut : Leçon validée ✅";
-        updateAll();
-      }
-    });
+      const btn = document.createElement("button");
+      btn.className = "md-button md-button--primary";
+      btn.style.cssText = "cursor: pointer; font-size: 13px;";
+      btn.textContent = isAlreadyViewed ? "✅ Leçon terminée" : "⚪ Marquer comme lue";
 
-    btnContainer.appendChild(statusText);
-    btnContainer.appendChild(btn);
-    article.appendChild(btnContainer);
+      btn.addEventListener("click", function () {
+        if (!viewedPages.includes(currentPageKey)) {
+          viewedPages.push(currentPageKey);
+          localStorage.setItem("wiki_viewed_pages", JSON.stringify(viewedPages));
+          btn.textContent = "✅ Leçon terminée";
+          statusText.textContent = "Statut : Leçon validée ✅";
+          updateAll();
+        }
+      });
+
+      btnContainer.appendChild(statusText);
+      btnContainer.appendChild(btn);
+      article.appendChild(btnContainer);
+    }
   }
 
-  // 3. BARRE DE PROGRESSION GLOBALE (DANS LE HEADER OU LA SIDEBAR)
+  // 3. BARRE DE PROGRESSION GLOBALE
   function renderProgressBar() {
-    let progressBar = document.getElementById("global-progress-bar");
-    if (!progressBar) {
-      const sidebar = document.querySelector(".md-sidebar--primary .md-sidebar__scrollwrap");
-      if (sidebar) {
-        const progressBox = document.createElement("div");
+    let progressBox = document.getElementById("global-progress-box");
+    
+    if (!progressBox) {
+      // Cherche la navigation principale dans le panneau latéral
+      const nav = document.querySelector(".md-sidebar--primary .md-sidebar__scrollwrap") || document.querySelector(".md-nav");
+      if (nav) {
+        progressBox = document.createElement("div");
         progressBox.id = "global-progress-box";
-        progressBox.style.cssText = "padding: 14px; margin: 10px; background: #f5f7fa; border: 1px solid #d5d9de; border-radius: 8px;";
+        progressBox.style.cssText = "padding: 12px 16px; margin: 12px; background: #f5f7fa; border: 1px solid #d5d9de; border-radius: 8px;";
         
         progressBox.innerHTML = `
           <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #444; margin-bottom: 6px;">
@@ -74,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div id="global-progress-bar" style="width: 0%; height: 100%; background: #4a9b5e; transition: width 0.3s ease;"></div>
           </div>
         `;
-        sidebar.insertBefore(progressBox, sidebar.firstChild);
+        nav.insertBefore(progressBox, nav.firstChild);
       }
     }
 
@@ -86,16 +105,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (barEl) barEl.style.width = `${percent}%`;
   }
 
-  // 4. MISE A JOUR DES COCHES DANS LE MENU
+  // 4. INJECTION DES COCHES DANS LE MENU LATÉRAL
   function markMenuLinks() {
     document.querySelectorAll(".md-nav__link").forEach(link => {
-      const href = link.getAttribute("href") || "";
-      formationPages.forEach(p => {
-        if (href.includes(p) && viewedPages.includes(p)) {
+      const href = normalizePath(link.getAttribute("href") || "");
+      
+      formationPages.forEach(key => {
+        if (href.includes(key) && viewedPages.includes(key)) {
           if (!link.querySelector(".check-mark")) {
             const check = document.createElement("span");
             check.className = "check-mark";
-            check.style.cssText = "margin-left: auto; color: #4a9b5e; font-weight: bold; font-size: 12px;";
+            check.style.cssText = "margin-left: auto; color: #4a9b5e; font-weight: bold; font-size: 13px;";
             check.textContent = " ✓";
             link.appendChild(check);
           }
