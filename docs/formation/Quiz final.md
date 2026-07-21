@@ -7,7 +7,7 @@
 <div style="background: #ffffff; padding: 18px; border-radius: 8px; border: 1px solid #ddd; margin: 20px 0; color: #1a1a1a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
 
   <p style="font-size: 14px; color: #555; margin-top: 0; margin-bottom: 16px;">
-    14 questions piochées dans les 7 séances, pour un bilan avant votre oral de certification :
+    13 questions piochées dans les 7 séances, pour un bilan avant votre oral de certification :
   </p>
 
   <div id="quizfinal-progress" style="font-size: 13px; color: #777; margin-bottom: 8px;"></div>
