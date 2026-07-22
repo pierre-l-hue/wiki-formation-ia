@@ -60,7 +60,10 @@ nav:
   - Glossaire: glossaire.md
   - Articles:
       - Vue d'ensemble: articles/index.md
-
+plugins:
+  - search
+  - readtime:
+      words_per_minute: 60  # Au lieu de 200 par défaut !
 markdown_extensions:
   - admonition
   - tables
