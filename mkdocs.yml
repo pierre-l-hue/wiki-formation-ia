@@ -48,7 +48,7 @@ nav:
       - H5 — Confidentialité et sécurité: formation/h5.md
       - H6 — Accessibilité et inclusivité: formation/h6.md
       - H7 — Éthique, IA Act, biais: formation/h7.md
-      - Certification RS6776: formation/Quiz final.md
+      - Quiz final: formation/Quiz final.md
   - Fiches outils:
       - Comparatif LLM: outils/comparatif.md
       - ChatGPT: outils/chatgpt.md
@@ -61,6 +61,8 @@ nav:
   - Glossaire: glossaire.md
   - Articles:
       - Prompting avancé (Few-shot & Chain-of-thought): articles/prompting-avance.md
+      - Comment éviter la "perte de mémoire": articles/contexte-memoire.md
+      - Réduire les hallucinations: articles/articles/reduction-hallucinations.md
 
 plugins:
   - search:
