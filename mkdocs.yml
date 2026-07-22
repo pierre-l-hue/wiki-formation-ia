@@ -65,8 +65,7 @@ nav:
 plugins:
   - search:
       lang: fr
-  - readtime:
-      words_per_minute: 60
+
 
 markdown_extensions:
   - admonition
