@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (article && (currentPath.includes("/formation/") || currentPageKey)) {
     const text = article.innerText || "";
     const wordCount = text.trim().split(/\s+/).length;
-    const readingTimeMinutes = Math.max(1, Math.ceil(wordCount / 200));
+    const readingTimeMinutes = Math.max(1, Math.ceil(wordCount / 60));
 
     const h1 = article.querySelector("h1");
     if (h1 && !article.querySelector(".reading-time-badge")) {
