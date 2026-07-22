@@ -62,7 +62,7 @@ nav:
   - Articles:
       - Prompting avancé (Few-shot & Chain-of-thought): articles/prompting-avance.md
       - Comment éviter la "perte de mémoire": articles/contexte-memoire.md
-      - Réduire les hallucinations: articles/articles/reduction-hallucinations.md
+      - Réduire les hallucinations: articles/reduction-hallucinations.md
 
 plugins:
   - search:
