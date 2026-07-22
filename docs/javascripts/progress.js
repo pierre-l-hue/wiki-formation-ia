@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Liste des identifiants uniques de leçons (en minuscules sans accents/espaces)
+  // Liste des identifiants uniques des modules de formation
   const formationPages = ["h0", "h1", "h2", "h3", "h4", "h5", "h6", "h7", "quiz"];
 
   // Fonction utilitaire pour normaliser les URL
@@ -15,28 +15,30 @@ document.addEventListener("DOMContentLoaded", function () {
   let viewedPages = JSON.parse(localStorage.getItem("wiki_viewed_pages") || "[]");
   const currentPath = normalizePath(window.location.pathname);
 
-  // Détection de la page actuelle
+  // Détection de la page actuelle dans le parcours de formation
   const currentPageKey = formationPages.find(key => currentPath.includes(key));
 
   const article = document.querySelector(".md-content__inner");
 
-  // 1. TEMPS DE LECTURE ESTIMÉ
-  if (article && (currentPath.includes("/formation/") || currentPageKey)) {
+  // 1. TEMPS DE LECTURE ESTIMÉ (Appliqué à TOUTES les pages du Wiki)
+  if (article) {
     const text = article.innerText || "";
     const wordCount = text.trim().split(/\s+/).length;
-    const readingTimeMinutes = Math.max(1, Math.ceil(wordCount / 60));
+    
+    // Vitesse adaptée à de la formation/technique (~35 mots/minute avec exercices/réflexion)
+    const readingTimeMinutes = Math.max(2, Math.ceil(wordCount / 35));
 
     const h1 = article.querySelector("h1");
     if (h1 && !article.querySelector(".reading-time-badge")) {
       const timeBadge = document.createElement("div");
       timeBadge.className = "reading-time-badge";
       timeBadge.style.cssText = "display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #1a5fb4; background: #eef4fb; padding: 4px 10px; border-radius: 12px; margin-top: 8px; margin-bottom: 16px;";
-      timeBadge.innerHTML = `⏱️ Temps de lecture estimé : ~${readingTimeMinutes} min (${wordCount} mots)`;
+      timeBadge.innerHTML = `⏱️ Temps estimé : ~${readingTimeMinutes} min (${wordCount} mots)`;
       h1.insertAdjacentElement('afterend', timeBadge);
     }
   }
 
-  // 2. BOUTON BASCULE (TOGGLE) EN BAS DE PAGE
+  // 2. BOUTON BASCULE (Uniquement sur les pages de Formation H0-H7 + Quiz)
   if (article && currentPageKey) {
     let btnContainer = document.getElementById("lesson-completion-container");
     if (!btnContainer) {
@@ -53,18 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.className = "md-button md-button--primary";
       btn.style.cssText = "cursor: pointer; font-size: 13px; transition: all 0.2s ease;";
 
-      // Fonction pour rafraîchir l'état visuel du bouton
       function updateButtonUI() {
         const isAlreadyViewed = viewedPages.includes(currentPageKey);
         if (isAlreadyViewed) {
           btn.textContent = "✅ Leçon terminée (Cliquer pour décocher)";
           statusText.textContent = "Statut : Leçon validée ✅";
-          btn.style.background = "#2e7d32"; // Vert foncé
+          btn.style.background = "#2e7d32";
           btn.style.borderColor = "#2e7d32";
         } else {
           btn.textContent = "⚪ Marquer comme lue";
           statusText.textContent = "Statut : Non terminée ⚪";
-          btn.style.background = ""; // Style par défaut du thème
+          btn.style.background = "";
           btn.style.borderColor = "";
         }
       }
@@ -72,10 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.addEventListener("click", function () {
         const index = viewedPages.indexOf(currentPageKey);
         if (index > -1) {
-          // Si déjà vue -> On décoche
           viewedPages.splice(index, 1);
         } else {
-          // Si non vue -> On ajoute
           viewedPages.push(currentPageKey);
         }
         localStorage.setItem("wiki_viewed_pages", JSON.stringify(viewedPages));
@@ -90,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 3. BARRE DE PROGRESSION GLOBALE
+  // 3. BARRE DE PROGRESSION GLOBALE (Dédiée aux parcours de formation)
   function renderProgressBar() {
     let progressBox = document.getElementById("global-progress-box");
     
@@ -103,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         progressBox.innerHTML = `
           <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #444; margin-bottom: 6px;">
-            <span>Progression globale</span>
+            <span>Progression Formation</span>
             <span id="progress-percent">0%</span>
           </div>
           <div style="width: 100%; background: #e0e0e0; height: 8px; border-radius: 4px; overflow: hidden;">
@@ -131,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (href.includes(key)) {
           const existingCheck = link.querySelector(".check-mark");
           if (viewedPages.includes(key)) {
-            // Ajouter la coche si elle n'existe pas déjà
             if (!existingCheck) {
               const check = document.createElement("span");
               check.className = "check-mark";
@@ -140,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
               link.appendChild(check);
             }
           } else {
-            // Supprimer la coche si elle était présente
             if (existingCheck) {
               existingCheck.remove();
             }
