@@ -1,2 +1,2 @@
 mkdocs-material
-mkdocs-readtime-plugin
+mkdocs-read-time-plugin
