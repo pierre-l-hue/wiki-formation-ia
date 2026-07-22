@@ -62,7 +62,6 @@ nav:
   - Articles:
       - Vue d'ensemble: articles/index.md
 
-# UNIFICATION DES PLUGINS (Le deuxième bloc supprimé !)
 plugins:
   - search:
       lang: fr
