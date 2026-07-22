@@ -122,7 +122,7 @@ Ajoutez simplement cette phrase à la fin de votre prompt :
 #### 2. Le guidage explicite de la réflexion
 Structurez votre prompt en lui dictant le cheminement intellectuel à suivre :
 
-```text
+    ```text
 Tu dois évaluer si notre projet est éligible à la prime énergie 2026.
 
 Avant de donner ton verdict final, déroule ton analyse selon les étapes suivantes :
