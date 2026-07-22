@@ -1,4 +1,3 @@
-# Claude
 <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
   <!-- CONTENEUR CARRÉ FIXE -->
   <div style="width: 80px; height: 80px; min-width: 80px; max-height: 80px; border-radius: 16px; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.06); background: #ffffff; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 8px;">
