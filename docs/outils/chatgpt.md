@@ -1,10 +1,8 @@
 # ChatGPT
 <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
-  <!-- CONTENEUR CARRE FIXE -->
-  <div style="width: 80px; height: 80px; min-width: 80px; border-radius: 16px; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.06); background: #ffffff; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 8px;" markdown="1">
-
-![Logo ChatGPT](../assets/chatgpt-logo.png){ width=80 style="max-height: 100%; object-fit: contain;" }
-
+  <!-- CONTENEUR CARRÉ FIXE -->
+  <div style="width: 80px; height: 80px; min-width: 80px; border-radius: 16px; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.06); background: #ffffff; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 8px;">
+    <img src="../assets/chatgpt-logo.png" alt="Logo ChatGPT" style="width: 100%; height: 100%; object-fit: contain;" />
   </div>
 
   <!-- TITRE ET LIEN OFFICIEL -->
