@@ -41,7 +41,7 @@ nav:
   - Certification RS6776:
       - Présentation: certification-rs6776.md
       - Evaluation d'entrée: evaluation-entree.md
-- Formation:
+  - Formation:
       - H0 — Lancement: formation/h0.md
       - H1 — Fondamentaux IA + ROFT: formation/h1.md
       - H2 — Stratégie d'implémentation IA: formation/h2.md
