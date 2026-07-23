@@ -51,19 +51,18 @@ nav:
       - H6 — Accessibilité et inclusivité: formation/h6.md
       - H7 — Éthique, IA Act, biais: formation/h7.md
       - Quiz final: formation/quiz-final.md
-  - Ressources pratiques:
+- Ressources pratiques:
       - Cas pratiques métiers:
           - Vue d'ensemble: cas-pratiques/index.md
           - Assistant administratif: cas-pratiques/assistant-administratif.md
           - Communication: cas-pratiques/communication.md
           - Ressources humaines: cas-pratiques/rh.md
       - Templates pratiques:
-                - Vue d'ensemble: templates/vue-densemble.md
-                - Prompt CROFT: templates/prompt-croft.md
-                - Prompt visuel: templates/prompt-visuel.md
-                - Anonymisation: templates/anonymisation.md
-                - Audit de biais: templates/audit-biais.md
-                - Checklist accessibilité: templates/checklist-accessibilite.md
+          - Anonymisation: anonymisation.md
+          - Prompt CROFT: prompt-croft.md
+          - Prompt visuel: prompt-visuel.md
+          - Audit de biais: audit-biais.md
+          - Checklist accessibilité: checklist-accessibilite.md
       - Fiches outils:
           - Comparatif LLM: outils/comparatif.md
           - ChatGPT: outils/chatgpt.md
