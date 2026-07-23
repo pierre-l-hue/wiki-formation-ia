@@ -49,6 +49,11 @@ nav:
       - H6 — Accessibilité et inclusivité: formation/h6.md
       - H7 — Éthique, IA Act, biais: formation/h7.md
       - Quiz final: formation/quiz-final.md
+  - Cas pratiques métiers:
+      - Vue d'ensemble: cas-pratiques/index.md
+      - Assistant administratif: cas-pratiques/assistant-administratif.md
+      - Communication: cas-pratiques/communication.md
+      - Ressources humaines: cas-pratiques/rh.md
   - Fiches outils:
       - Comparatif LLM: outils/comparatif.md
       - ChatGPT: outils/chatgpt.md
