@@ -39,3 +39,22 @@ Contraintes :
 
 Texte à reformuler :
 [coller ici une version anonymisée du texte]
+ ```
+
+## À éviter
+!!! warning "À éviter"
+Ne collez pas directement un email contenant :
+- le nom complet d’un client ;
+- une adresse email ;
+- un numéro de téléphone ;
+- un montant confidentiel ;
+- une information contractuelle sensible.
+  
+## Bon réflexe
+!!! success "Bon réflexe"
+Avant de coller un texte dans une IA, remplacez les informations sensibles par des exemples neutres.
+Exemple :
+- `Marie Dupont` devient `Client A`
+- `12 500 €` devient `montant du devis`
+- `contrat signé le 12 mars` devient `contrat signé à une date donnée`
+  
