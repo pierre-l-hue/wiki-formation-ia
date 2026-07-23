@@ -38,7 +38,6 @@ extra_javascript:
 nav:
   - Accueil: index.md
   - Certification RS6776: certification-rs6776.md
-  - Sources officielles: sources-officielles.md
   - Formation:
       - H0 — Lancement: formation/h0.md
       - H1 — Fondamentaux IA + ROFT: formation/h1.md
@@ -49,33 +48,36 @@ nav:
       - H6 — Accessibilité et inclusivité: formation/h6.md
       - H7 — Éthique, IA Act, biais: formation/h7.md
       - Quiz final: formation/quiz-final.md
-  - Cas pratiques métiers:
-      - Vue d'ensemble: cas-pratiques/index.md
-      - Assistant administratif: cas-pratiques/assistant-administratif.md
-      - Communication: cas-pratiques/communication.md
-      - Ressources humaines: cas-pratiques/rh.md
-  - Templates pratiques:
-      - Vue d'ensemble: docs/templates/index.md
-      - Prompt CROFT: docs/templates/prompt-croft.md
-      - Prompt visuel: docs/templates/prompt-visuel.md
-      - Anonymisation: docs/templates/anonymisation.md
-      - Audit de biais: docs/templates/audit-biais.md
-      - Checklist accessibilité: templates/checklist-accessibilite.md
-  - Fiches outils:
-      - Comparatif LLM: outils/comparatif.md
-      - ChatGPT: outils/chatgpt.md
-      - Claude: outils/claude.md
-      - Gemini: outils/gemini.md
-      - Mistral: outils/mistral.md
-      - Copilot: outils/copilot.md
-      - Perplexity: outils/perplexity.md
-      - 4D Fluency: outils/4d-fluency.md
+  -Ressources pratiques:
+      - Cas pratiques métiers:
+          - Vue d'ensemble: cas-pratiques/index.md
+          - Assistant administratif: cas-pratiques/assistant-administratif.md
+          - Communication: cas-pratiques/communication.md
+          - Ressources humaines: cas-pratiques/rh.md
+      - Templates pratiques:
+          - Vue d'ensemble: docs/templates/index.md
+          - Prompt CROFT: docs/templates/prompt-croft.md
+          - Prompt visuel: docs/templates/prompt-visuel.md
+          - Anonymisation: docs/templates/anonymisation.md
+          - Audit de biais: docs/templates/audit-biais.md
+          - Checklist accessibilité: templates/checklist-accessibilite.md
+      - Fiches outils:
+          - Comparatif LLM: outils/comparatif.md
+          - ChatGPT: outils/chatgpt.md
+          - Claude: outils/claude.md
+          - Gemini: outils/gemini.md
+          - Mistral: outils/mistral.md
+          - Copilot: outils/copilot.md
+          - Perplexity: outils/perplexity.md
+          - 4D Fluency: outils/4d-fluency.md
+      - Sources officielles: sources-officielles.md
+      - Articles:
+          - Vue d'ensemble: articles/index.md
+          - Prompting avancé (Few-shot & Chain-of-thought): articles/prompting-avance.md
+          - Comment éviter la "perte de mémoire": articles/contexte-memoire.md
+          - Réduire les hallucinations: articles/reduction-hallucinations.md  
   - Glossaire: glossaire.md
-  - Articles:
-      - Vue d'ensemble: articles/index.md
-      - Prompting avancé (Few-shot & Chain-of-thought): articles/prompting-avance.md
-      - Comment éviter la "perte de mémoire": articles/contexte-memoire.md
-      - Réduire les hallucinations: articles/reduction-hallucinations.md
+
 
 plugins:
   - search:
