@@ -41,7 +41,7 @@ nav:
   - Certification RS6776:
       - Présentation: certification-rs6776.md
       - Evauation d'entrée: evaluation-entree.md
-  - Formation:
+- Formation:
       - H0 — Lancement: formation/h0.md
       - H1 — Fondamentaux IA + ROFT: formation/h1.md
       - H2 — Stratégie d'implémentation IA: formation/h2.md
@@ -51,7 +51,7 @@ nav:
       - H6 — Accessibilité et inclusivité: formation/h6.md
       - H7 — Éthique, IA Act, biais: formation/h7.md
       - Quiz final: formation/quiz-final.md
-- Ressources pratiques:
+  - Ressources pratiques:
       - Cas pratiques métiers:
           - Vue d'ensemble: cas-pratiques/index.md
           - Assistant administratif: cas-pratiques/assistant-administratif.md
@@ -79,7 +79,7 @@ nav:
           - Comment éviter la "perte de mémoire": articles/contexte-memoire.md
           - Réduire les hallucinations: articles/reduction-hallucinations.md
   - Glossaire: glossaire.md
-
+  
 plugins:
   - search:
       lang: fr
