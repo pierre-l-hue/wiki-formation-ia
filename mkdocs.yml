@@ -32,8 +32,6 @@ theme:
     - content.code.copy
     - toc.integrate
 
-extra_files:
-  - assets/jeu-next-token.html
 extra_javascript:
   - javascripts/progress.js
 
@@ -60,6 +58,7 @@ nav:
       - 4D Fluency: outils/4d-fluency.md
   - Glossaire: glossaire.md
   - Articles:
+      - Vue d'ensemble: articles/index.md
       - Prompting avancé (Few-shot & Chain-of-thought): articles/prompting-avance.md
       - Comment éviter la "perte de mémoire": articles/contexte-memoire.md
       - Réduire les hallucinations: articles/reduction-hallucinations.md
