@@ -54,6 +54,13 @@ nav:
       - Assistant administratif: cas-pratiques/assistant-administratif.md
       - Communication: cas-pratiques/communication.md
       - Ressources humaines: cas-pratiques/rh.md
+  - Templates pratiques:
+      - Vue d'ensemble: templates/index.md
+      - Prompt CROFT: templates/prompt-croft.md
+      - Prompt visuel: templates/prompt-visuel.md
+      - Anonymisation: templates/anonymisation.md
+      - Audit de biais: templates/audit-biais.md
+      - Checklist accessibilité: templates/checklist-accessibilite.md
   - Fiches outils:
       - Comparatif LLM: outils/comparatif.md
       - ChatGPT: outils/chatgpt.md
