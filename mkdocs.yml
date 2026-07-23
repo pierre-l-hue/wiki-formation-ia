@@ -55,7 +55,7 @@ nav:
           - Communication: cas-pratiques/communication.md
           - Ressources humaines: cas-pratiques/rh.md
       - Templates pratiques:
-          - Vue d'ensemble: templates/index.md
+          - Présentation: templates/index.md
           - Prompt CROFT: templates/prompt-croft.md
           - Prompt visuel: templates/prompt-visuel.md
           - Anonymisation: templates/anonymisation.md
