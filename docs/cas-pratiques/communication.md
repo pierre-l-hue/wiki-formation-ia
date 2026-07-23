@@ -21,31 +21,35 @@ Votre objectif : gagner du temps tout en gardant une communication claire, cohé
 
 ## Prompt utile
 
-```text
-Tu es chargé de communication B2B.
+    Tu es chargé de communication B2B.
 
-Objectif :
-Propose 3 versions d’un post LinkedIn à partir des informations ci-dessous.
+    Objectif :
+    Propose 3 versions d’un post LinkedIn à partir des informations ci-dessous.
 
-Contexte :
-Le post s’adresse à des professionnels non spécialistes.
+    Contexte :
+    Le post s’adresse à des professionnels non spécialistes.
 
-Contraintes :
-- ton clair et professionnel ;
-- pas de jargon inutile ;
-- une accroche forte ;
-- un appel à l’action simple ;
-- maximum 900 caractères.
+    Contraintes :
+    - ton clair et professionnel ;
+    - pas de jargon inutile ;
+    - une accroche forte ;
+    - un appel à l’action simple ;
+    - maximum 900 caractères.
 
-Informations :
-[coller ici les informations non confidentielles]
-  ```
+    Informations :
+    [coller ici les informations non confidentielles]
+
+---
+
+## Dans la vraie vie
+
 !!! tip "Dans la vraie vie"
-Demandez toujours plusieurs variantes.
-Exemple :
-
-- une version courte ;
-- une version plus pédagogique ;
-- une version plus engageante.
-
-Ensuite, choisissez et améliorez vous-même la meilleure.
+    Demandez toujours plusieurs variantes.
+    
+    Exemple :
+    
+    - une version courte ;
+    - une version plus pédagogique ;
+    - une version plus engageante.
+    
+    Ensuite, choisissez et améliorez vous-même la meilleure.
