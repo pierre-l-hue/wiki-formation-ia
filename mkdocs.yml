@@ -37,6 +37,7 @@ extra_javascript:
 
 nav:
   - Accueil: index.md
+  - Certification RS6776: certification-rs6776.md
   - Formation:
       - H0 — Lancement: formation/h0.md
       - H1 — Fondamentaux IA + ROFT: formation/h1.md
