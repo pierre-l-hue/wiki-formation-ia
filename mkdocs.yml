@@ -55,11 +55,11 @@ nav:
       - Communication: cas-pratiques/communication.md
       - Ressources humaines: cas-pratiques/rh.md
   - Templates pratiques:
-      - Vue d'ensemble: templates/index.md
-      - Prompt CROFT: templates/prompt-croft.md
-      - Prompt visuel: templates/prompt-visuel.md
-      - Anonymisation: templates/anonymisation.md
-      - Audit de biais: templates/audit-biais.md
+      - Vue d'ensemble: docs/templates/index.md
+      - Prompt CROFT: docs/templates/prompt-croft.md
+      - Prompt visuel: docs/templates/prompt-visuel.md
+      - Anonymisation: docs/templates/anonymisation.md
+      - Audit de biais: docs/templates/audit-biais.md
       - Checklist accessibilité: templates/checklist-accessibilite.md
   - Fiches outils:
       - Comparatif LLM: outils/comparatif.md
