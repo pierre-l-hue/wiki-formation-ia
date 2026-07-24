@@ -20,7 +20,7 @@ Utilisez ce module pour construire rapidement un prompt structuré.
 <div class="wiki-card-icon">🧩</div>
 <h3>Générateur CROFT</h3>
 
-Compléter les 5 champs, puis copier le prompt généré.
+Complétez les 5 champs, puis copiez le prompt généré.
 </div>
 
 <div class="prompt-generator">
@@ -107,7 +107,7 @@ Compléter les 5 champs, puis copier le prompt généré.
 <div class="good-reflex-box" markdown="block">
 <h3>✅ Le bon réflexe</h3>
 
-Commencer par un prompt simple, puis l’améliorer avec CROFT.
+Commencez par un prompt simple, puis améliorez-le avec CROFT.
 
 Un bon prompt n’a pas besoin d’être long.  
 Il doit surtout être clair, précis et exploitable.
@@ -116,7 +116,7 @@ Il doit surtout être clair, précis et exploitable.
 <div class="warning-practice-box" markdown="block">
 <h3>🛑 À éviter</h3>
 
-Ne pas changer 5 paramètres à la fois quand une réponse ne convient pas.
+Ne changez pas 5 paramètres à la fois quand une réponse ne convient pas.
 
 Modifier un seul élément à la fois permet de comprendre ce qui améliore réellement le résultat.
 </div>
