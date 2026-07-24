@@ -13,54 +13,67 @@
   </div>
 </div>
 
+*Utiliser l’IA dans Word, Excel, Outlook, PowerPoint et Teams.*
 
-*Utiliser l'IA dans Word, Excel, Outlook, PowerPoint et Teams*
+---
 
-## 2 façons d'utiliser Copilot
+## 2 façons d’utiliser Copilot
 
-| | Copilot gratuit | Copilot dans Microsoft 365 |
+|  | Copilot gratuit | Copilot dans Microsoft 365 |
 |---|---|---|
-| Accès | Web ou application | Intégré aux outils métiers |
-| Usage | Poser des questions, reformuler, résumer, découvrir l'outil | S'appuie sur fichiers, emails, réunions, données de travail |
+| **Accès** | Web ou application | Intégré aux outils métiers |
+| **Usage** | Poser des questions, reformuler, résumer, découvrir l’outil | S’appuie sur les fichiers, emails, réunions et données de travail |
 
 !!! tip "À noter"
-    Même avec la version gratuite, on peut déjà apprendre les bons réflexes : demander clairement, relire, corriger, tester plusieurs formulations.
+    Même avec la version gratuite, on peut déjà apprendre les bons réflexes : demander clairement, relire, corriger et tester plusieurs formulations.
 
-## Copilot, c'est quoi ?
+---
 
-Assistant IA Microsoft qui aide à réaliser des tâches de travail à partir d'une consigne écrite. On le retrouve dans Word, Excel, PowerPoint, Outlook, Teams. Il peut rédiger, résumer, reformuler, analyser des données, aider à préparer un support. On commence par une demande simple, puis on précise pour améliorer la réponse.
+## Copilot, c’est quoi ?
+
+Copilot est l’assistant IA de Microsoft pour aider à réaliser des tâches de travail à partir d’une consigne écrite. On le retrouve dans Word, Excel, PowerPoint, Outlook et Teams. Il peut rédiger, résumer, reformuler, analyser des données ou aider à préparer un support. Le plus simple est de commencer par une demande claire, puis de la préciser au fil de l’échange.
+
+---
 
 ## À quoi sert Copilot ?
 
-- **Rédiger plus vite** — brouillon, reformulation, adaptation d'un contenu
-- **Résumer l'information** — un document, un échange, ce qui a été manqué en réunion
-- **Analyser et retrouver** — extraire des idées clés, explorer des données
-- **Préparer des supports** — mail, présentation, document, plan de travail
+- **Rédiger plus vite** : créer un brouillon, reformuler ou adapter un contenu.
+- **Résumer l’information** : synthétiser un document, un échange ou une réunion.
+- **Analyser et retrouver** : extraire des idées clés, explorer des données, repérer l’essentiel.
+- **Préparer des supports** : mail, présentation, document, plan de travail.
+
+---
 
 ## Ce que Copilot fait bien
 
-- Travail dans le bon contexte : agit directement dans les outils Microsoft déjà utilisés
-- Moins de copier-coller entre applications
-- Particulièrement utile pour mails, documents, tableaux, présentations
-- Meilleur choix si vous utilisez déjà Word, Outlook, Excel, PowerPoint
+- Travailler dans le bon contexte, directement dans les outils Microsoft déjà utilisés.
+- Réduire le copier-coller entre plusieurs applications.
+- Être particulièrement utile pour les mails, documents, tableaux et présentations.
+- Constituer un bon choix si vous utilisez déjà Word, Outlook, Excel et PowerPoint.
 
-## Comment bien l'utiliser
+---
 
-- Partir d'un contenu réel : mail, fichier, échange, réunion
-- Dans Outlook : résumer un fil de mails ; dans Teams : retrouver l'essentiel d'une réunion ; dans Word/PowerPoint : repartir d'un document existant
-- Demander une action précise : résumer, extraire les décisions, reformuler
-- Toujours relire avant d'envoyer (ton, exactitude, ce qui sera réellement partagé)
+## Comment bien l’utiliser
+
+- Partir d’un contenu réel : mail, fichier, échange ou réunion.
+- Dans Outlook, demander un résumé d’un fil de mails ; dans Teams, retrouver l’essentiel d’une réunion ; dans Word ou PowerPoint, repartir d’un document existant.
+- Demander une action précise : résumer, extraire les décisions, reformuler, préparer une synthèse.
+- Toujours relire avant d’envoyer ou de diffuser : ton, exactitude, informations réellement partagées.
+
+---
 
 ## Les limites de Copilot
 
-- Peut se tromper comme toute IA générative
-- La version gratuite n'accède pas automatiquement aux fichiers/mails/réunions Microsoft 365
-- Moins utile hors écosystème Microsoft
-- L'utilisateur reste responsable du contenu final
+- Peut se tromper, comme toute IA générative.
+- La version gratuite n’accède pas automatiquement aux fichiers, mails ou réunions Microsoft 365.
+- Est moins utile hors de l’écosystème Microsoft.
+- L’utilisateur reste responsable du contenu final.
+
+---
 
 ## Bonnes pratiques
 
-- Commencer par une tâche simple
-- Utiliser un vrai support de travail si possible
-- Demander une action précise
-- Relire avant diffusion
+- Commencer par une tâche simple.
+- Utiliser un vrai support de travail si possible.
+- Demander une action précise.
+- Relire avant diffusion.
