@@ -138,6 +138,6 @@ Pour obtenir un résultat qui ne ressemble pas à du "texte générique d'IA", n
 ---
 
 <div class="wiki-actions">
-  <a class="wiki-button primary" href="../ressources-humaines/">Cas pratique suivant : Ressources Humaines ➔</a>
+  <a class="wiki-button primary" href="./ressources-humaines/">Cas pratique suivant : Ressources Humaines ➔</a>
   <a class="wiki-button" href="../">Vue d'ensemble des cas pratiques</a>
 </div>
