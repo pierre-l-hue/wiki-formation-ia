@@ -7,9 +7,10 @@ theme:
   name: material
   logo: assets/logo.png
   favicon: assets/logo.png
-  text: Poppins
-  code: Roboto Mono
   language: fr
+  font:
+    text: Poppins
+    code: Roboto Mono
   palette:
     - scheme: default
       primary: blue
@@ -28,6 +29,7 @@ theme:
     - navigation.sections
     - navigation.top
     - navigation.instant
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -39,10 +41,10 @@ extra_javascript:
   - javascripts/prompting-avance.js
   - javascripts/contexte-memoire.js
   - javascripts/reduction-hallucinations.js
-  
+
 extra_css:
   - stylesheets/extra.css
-  
+
 nav:
   - Accueil: index.md
 
@@ -87,13 +89,13 @@ nav:
 
       - Veille et approfondissement:
           - Sources officielles: sources-officielles.md
-          - Articles: articles/index.md
+          - Vue d'ensemble: articles/index.md
           - Prompting avancé (Few-shot & Chain-of-thought): articles/prompting-avance.md
           - Comment éviter la "perte de mémoire": articles/contexte-memoire.md
           - Réduire les hallucinations: articles/reduction-hallucinations.md
 
   - Glossaire: glossaire.md
-  
+
 plugins:
   - search:
       lang: fr
