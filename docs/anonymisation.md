@@ -6,9 +6,10 @@ La protection des données personnelles et confidentielles est un prérequis abs
 
 <h3>🎯 Objectifs du template</h3>
 
-* **Protéger les données personnelles :** supprimer ou remplacer tout élément identifiable (RGPD).
-* **Préserver le secret des affaires :** masquer les informations financières, stratégiques ou contractuelles.
-* **Conserver le contexte :** anonymiser sans perdre le sens du texte pour permettre à l'IA d'apporter une réponse pertinente.
+  <ul>
+    <li><strong>**Protéger les données personnelles :** supprimer ou remplacer tout élément identifiable (RGPD).</li>
+<li><strong>**Préserver le secret des affaires :** masquer les informations financières, stratégiques ou contractuelles.</li>
+<li><strong>**Conserver le contexte :** anonymiser sans perdre le sens du texte pour permettre à l'IA d'apporter une réponse pertinente.</li>
 
 </div>
 
