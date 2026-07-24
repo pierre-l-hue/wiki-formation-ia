@@ -141,5 +141,5 @@ Pour tous vos travaux RH à l'aide de l'IA :
 
 <div class="wiki-actions">
   <a class="wiki-button primary" href="../">Vue d'ensemble des cas pratiques ➔</a>
-  <a class="wiki-button" href="../communication/">⬅️ Cas précédent : Communication</a>
+  <a class="wiki-button" href="./communication/">⬅️ Cas précédent : Communication</a>
 </div>
