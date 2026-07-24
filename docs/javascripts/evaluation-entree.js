@@ -371,6 +371,11 @@ function initEvaluationEntree() {
   let currentQuestion = 0;
   const answers = new Array(questions.length).fill(null);
 
+  const introBox = root.querySelector("#eval-intro");
+  const form = root.querySelector("#eval-form");
+  const startBtn = root.querySelector("#eval-start");
+  const quizBox = root.querySelector("#eval-quiz");
+
   const container = root.querySelector("#eval-questions");
   const resultBox = root.querySelector("#eval-resultat");
   const correctionBox = root.querySelector("#eval-correction");
@@ -381,14 +386,21 @@ function initEvaluationEntree() {
   const dateInput = root.querySelector("#eval-date");
   const nameInput = root.querySelector("#eval-nom");
 
-  if (!container || !resultBox || !correctionBox || !submitBtn || !showAnswersBtn || !printBtn || !resetBtn) return;
+  if (
+    !introBox || !form || !startBtn || !quizBox ||
+    !container || !resultBox || !correctionBox ||
+    !submitBtn || !showAnswersBtn || !printBtn || !resetBtn
+  ) return;
 
   if (dateInput && !dateInput.value) {
     const today = new Date().toISOString().slice(0, 10);
     dateInput.value = today;
   }
 
+  quizBox.style.display = "none";
   submitBtn.style.display = "none";
+  showAnswersBtn.style.display = "none";
+  printBtn.style.display = "none";
 
   function updateSubmitVisibility() {
     const allAnswered = answers.every(function (answer) {
@@ -476,8 +488,6 @@ function initEvaluationEntree() {
 
     if (answers[qIndex] === null) {
       nextBtn.disabled = true;
-      nextBtn.style.opacity = "0.5";
-      nextBtn.style.cursor = "not-allowed";
     }
 
     nextBtn.addEventListener("click", function () {
@@ -529,7 +539,7 @@ function initEvaluationEntree() {
     return {
       label: "Niveau très avancé",
       message: "Vous maîtrisez déjà beaucoup de notions. La formation servira à renforcer vos réflexes professionnels et votre préparation à la certification."
-    };
+      };
   }
 
   function calculateScore() {
@@ -548,7 +558,9 @@ function initEvaluationEntree() {
   function renderResult() {
     const data = calculateScore();
     const score = data.score;
-    const unanswered = data.answers.filter(function (answer) { return answer === null; }).length;
+    const unanswered = data.answers.filter(function (answer) {
+      return answer === null;
+    }).length;
     const level = getLevel(score);
     const nom = nameInput && nameInput.value ? nameInput.value : "Non renseigné";
     const date = dateInput && dateInput.value ? dateInput.value : "Non renseignée";
@@ -600,6 +612,16 @@ function initEvaluationEntree() {
     correctionBox.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  startBtn.addEventListener("click", function () {
+    if (!form.reportValidity()) return;
+
+    introBox.style.display = "none";
+    quizBox.style.display = "block";
+    currentQuestion = 0;
+    renderQuestion(currentQuestion);
+    updateSubmitVisibility();
+  });
+
   submitBtn.addEventListener("click", renderResult);
   showAnswersBtn.addEventListener("click", renderCorrection);
 
@@ -635,13 +657,13 @@ function initEvaluationEntree() {
     submitBtn.style.display = "none";
     resultBox.innerHTML = "";
     correctionBox.innerHTML = "";
+    container.innerHTML = "";
 
-    renderQuestion(currentQuestion);
+    introBox.style.display = "block";
+    quizBox.style.display = "none";
+
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
-  renderQuestion(currentQuestion);
-  updateSubmitVisibility();
 }
 
 if (typeof document$ !== "undefined") {
