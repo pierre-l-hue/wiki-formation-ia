@@ -334,3 +334,14 @@
     min-height: 130px;
   }
 }
+.prompt-generator .wiki-button.primary {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color) !important;
+  border: 1px solid var(--md-primary-fg-color);
+}
+
+.prompt-generator .wiki-button.primary:hover,
+.prompt-generator .wiki-button.primary:focus,
+.prompt-generator .wiki-button.primary:active {
+  color: var(--md-primary-bg-color) !important;
+}
