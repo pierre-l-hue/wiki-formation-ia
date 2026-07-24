@@ -3,7 +3,10 @@
 <div class="summary-box" markdown="block">
 <h3>🎯 Objectif du glossaire</h3>
 
-Ces codes sont des raccourcis à insérer dans les prompts pour :
+Ces codes sont des raccourcis à insérer dans les prompts pour améliorer la qualité des réponses produites par l’IA.
+
+Ils servent notamment à :
+
 - cadrer plus vite les demandes ;
 - adapter le niveau de langage ;
 - contrôler le ton, le format et la pédagogie ;
@@ -37,7 +40,12 @@ Ces codes sont des raccourcis à insérer dans les prompts pour :
 <div class="good-reflex-box" markdown="block">
 <h3>✅ Bon réflexe</h3>
 
-Pour des publics variés, combiner un code de niveau (FALC, ELI5, B1) avec un code de format (TLDR, bullet points) permet souvent d’obtenir un texte à la fois accessible et directement exploitable.
+Pour des publics variés, il est souvent utile de combiner :
+
+- un code de niveau, comme **FALC**, **ELI5** ou **B1** ;
+- un code de format, comme **TLDR** ou **bullet points**.
+
+Cette combinaison permet d’obtenir un texte à la fois plus accessible et plus directement exploitable.
 </div>
 
 ---
@@ -69,10 +77,11 @@ Pour des publics variés, combiner un code de niveau (FALC, ELI5, B1) avec un co
 <h3>Astuce format</h3>
 
 Pour un même contenu, spécifier à la fois :
-- un **format** (tableau, checklist, JSON) ;
+
+- un **format** attendu, comme tableau, checklist ou JSON ;
 - une **longueur maximale** ;
 
-permet de garder la réponse à la fois lisible et directement réutilisable.
+permet souvent d’obtenir une réponse plus lisible et plus facile à réutiliser.
 </div>
 
 ---
@@ -101,7 +110,11 @@ permet de garder la réponse à la fois lisible et directement réutilisable.
 <div class="summary-box" markdown="block">
 <h3>💡 Comment utiliser ce glossaire en pratique</h3>
 
-- Garder cette page ouverte pendant une session de prompting.
-- Combiner 2 à 3 codes au maximum par demande (structuration + ton + format).
-- Réutiliser les formulations qui fonctionnent bien dans des modèles de prompt ou des assistants dédiés.
+Cette page peut servir de repère pendant une session de prompting.
+
+Pour l’utiliser efficacement :
+
+- garder le glossaire ouvert pendant l’exercice ;
+- combiner 2 à 3 codes au maximum par demande ;
+- réutiliser les formulations qui fonctionnent bien dans des modèles de prompt ou des assistants dédiés.
 </div>
