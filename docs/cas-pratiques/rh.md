@@ -2,7 +2,7 @@
 
 Dans les ressources humaines, de nombreux documents demandent à la fois rigueur, clarté et confidentialité. Ce cas pratique montre comment utiliser l’IA comme assistant de rédaction et d’analyse pour produire des documents RH utiles, tout en respectant les règles de sécurité, de conformité et de non-discrimination.
 
-<div class="summary-box">
+<div class="summary-box" markdown="block">
 <h3>🎯 Objectifs opérationnels</h3>
 
 - Rédiger des offres d’emploi plus claires, attractives et inclusives.
@@ -16,7 +16,7 @@ Dans les ressources humaines, de nombreux documents demandent à la fois rigueur
 
 Les équipes RH produisent régulièrement des offres d’emploi, des notes internes, des grilles d’entretien, des documents de cadrage et des supports de communication liés à la vie de l’entreprise.
 
-<div class="real-life-box">
+<div class="real-life-box" markdown="block">
 <h3>💼 Dans la vraie vie</h3>
 
 L’IA aide à rédiger, reformuler, structurer ou relire.  
@@ -31,31 +31,31 @@ Le recrutement, l’évaluation, la promotion ou la sanction restent des décisi
 <div class="wiki-grid">
 
 <div class="wiki-card">
-<div class="wiki-card-icon">📢</div>
-<h3>Offres d’emploi</h3>
-<p>Clarifier les missions, valoriser le poste et repérer les formulations à risque ou peu inclusives.</p>
-<span class="wiki-badge success">Gain de temps : très élevé</span>
+  <div class="wiki-card-icon">📢</div>
+  <h3>Offres d’emploi</h3>
+  <p>Clarifier les missions, valoriser le poste et repérer les formulations à risque ou peu inclusives.</p>
+  <span class="wiki-badge success">Gain de temps : très élevé</span>
 </div>
 
 <div class="wiki-card">
-<div class="wiki-card-icon">📋</div>
-<h3>Grilles d’entretien</h3>
-<p>Construire des questions par compétence pour comparer les candidatures de façon plus homogène.</p>
-<span class="wiki-badge success">Gain de temps : élevé</span>
+  <div class="wiki-card-icon">📋</div>
+  <h3>Grilles d’entretien</h3>
+  <p>Construire des questions par compétence pour comparer les candidatures de façon plus homogène.</p>
+  <span class="wiki-badge success">Gain de temps : élevé</span>
 </div>
 
 <div class="wiki-card">
-<div class="wiki-card-icon">✉️</div>
-<h3>Communications internes</h3>
-<p>Reformuler des notes RH ou administratives pour les rendre plus claires et plus accessibles.</p>
-<span class="wiki-badge">Gain de temps : moyen</span>
+  <div class="wiki-card-icon">✉️</div>
+  <h3>Communications internes</h3>
+  <p>Reformuler des notes RH ou administratives pour les rendre plus claires et plus accessibles.</p>
+  <span class="wiki-badge">Gain de temps : moyen</span>
 </div>
 
 <div class="wiki-card">
-<div class="wiki-card-icon">🔍</div>
-<h3>Analyse d’inclusivité</h3>
-<p>Repérer les biais de formulation liés au genre, à l’âge, au parcours ou aux stéréotypes implicites.</p>
-<span class="wiki-badge">Gain de temps : élevé</span>
+  <div class="wiki-card-icon">🔍</div>
+  <h3>Analyse d’inclusivité</h3>
+  <p>Repérer les biais de formulation liés au genre, à l’âge, au parcours ou aux stéréotypes implicites.</p>
+  <span class="wiki-badge">Gain de temps : élevé</span>
 </div>
 
 </div>
@@ -100,7 +100,7 @@ TEXTE DE L’OFFRE (ANONYMISÉ) :
 
 ## Vigilance sur les données RH
 
-<div class="warning-practice-box">
+<div class="warning-practice-box" markdown="block">
 <h3>🛑 À éviter absolument</h3>
 
 Ne jamais envoyer dans une IA des données nominatives ou sensibles comme :
@@ -112,7 +112,7 @@ Ne jamais envoyer dans une IA des données nominatives ou sensibles comme :
 - les dossiers disciplinaires, conflits internes ou procédures de départ.
 </div>
 
-<div class="good-reflex-box">
+<div class="good-reflex-box" markdown="block">
 <h3>✅ Le bon réflexe : anonymiser et relire</h3>
 
 Pour tout usage RH de l’IA :
@@ -126,7 +126,7 @@ Pour tout usage RH de l’IA :
 
 ## Rendre une offre plus inclusive
 
-<div class="real-life-box">
+<div class="real-life-box" markdown="block">
 <h3>🧩 Exemple de vigilance</h3>
 
 Une offre d’emploi peut exclure sans le vouloir si elle :
@@ -143,7 +143,7 @@ L’IA peut aider à repérer ces signaux, mais la validation finale reste humai
 
 ## Checklist de validation RH
 
-<div class="summary-box">
+<div class="summary-box" markdown="block">
 <h3>Avant de diffuser ou d’utiliser un document RH généré avec l’IA</h3>
 
 1. Le document respecte-t-il les obligations légales et les règles internes applicables ?
