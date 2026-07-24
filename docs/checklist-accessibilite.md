@@ -122,6 +122,6 @@ Un contenu accessible bénéficie à l’ensemble des lecteurs :
 ---
 
 <div class="wiki-actions">
-  <a class="wiki-button primary" href="../outils/comparatif/">Section suivante : Fiches outils ➔</a>
+  <a class="wiki-button primary" href="./outils/comparatif/">Section suivante : Fiches outils ➔</a>
   <a class="wiki-button" href="../audit-biais/">⬅️ Template précédent : Audit de biais</a>
 </div>
