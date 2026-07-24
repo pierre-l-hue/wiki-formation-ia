@@ -42,6 +42,7 @@ extra_javascript:
   - javascripts/contexte-memoire.js
   - javascripts/reduction-hallucinations.js
   - javascripts/reduction-hallucinations.js
+  - javascripts/quiz-final.js
 
 extra_css:
   - stylesheets/extra.css
