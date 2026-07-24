@@ -16,7 +16,6 @@
   </div>
 
 </div>
----
 
 ## 🎯 À quoi sert Gemini ?
 
