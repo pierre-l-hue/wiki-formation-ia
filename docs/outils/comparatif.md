@@ -1,6 +1,6 @@
 # 🛠️ Grille de prompting & aide-mémoire LLM
 
-Bienvenue sur votre boussole quotidienne. Cette fiche regroupe les outils, méthodes et structures utiles pour réussir des usages d’IA générative dans le cadre de la **certification RS6776**.
+Bienvenue sur votre boussole quotidienne. Cette fiche regroupe les outils, méthodes et structures utiles pour réussir vos usages d’IA générative dans le cadre de la **certification RS6776**.
 
 <div class="summary-box" markdown="block">
 <h3>🎯 À quoi sert cette page ?</h3>
@@ -16,50 +16,47 @@ Bienvenue sur votre boussole quotidienne. Cette fiche regroupe les outils, méth
 
 Utilisez ce module pour construire rapidement un prompt structuré.
 
-<div class="wiki-card">
-  <div class="wiki-card-icon">🧩</div>
-  <h3>Générateur CROFT</h3>
-  <p>Complétez les 5 champs, puis copiez le prompt généré.</p>
+<div class="wiki-card" markdown="block">
+<div class="wiki-card-icon">🧩</div>
+<h3>Générateur CROFT</h3>
+
+Compléter les 5 champs, puis copier le prompt généré.
 </div>
 
-<div class="prompt-generator" markdown="block">
+<div class="prompt-generator">
+  <div class="prompt-generator-grid">
+    <div>
+      <label for="generator-c">Contexte</label>
+      <input type="text" id="generator-c" placeholder="Ex. Dans le cadre d’un projet de refonte intranet...">
+    </div>
 
-<div class="prompt-generator-grid">
+    <div>
+      <label for="generator-r">Rôle</label>
+      <input type="text" id="generator-r" placeholder="Ex. Tu es un expert en communication interne...">
+    </div>
 
-<div>
-<label for="generator-c"><strong>Contexte</strong></label>
-<input type="text" id="generator-c" placeholder="Ex. Dans le cadre d’un projet de refonte intranet...">
-</div>
+    <div>
+      <label for="generator-o">Objectif</label>
+      <input type="text" id="generator-o" placeholder="Ex. Rédige un mail pour annoncer la nouvelle charte...">
+    </div>
 
-<div>
-<label for="generator-r"><strong>Rôle</strong></label>
-<input type="text" id="generator-r" placeholder="Ex. Tu es un expert en communication interne...">
-</div>
+    <div>
+      <label for="generator-f">Format</label>
+      <input type="text" id="generator-f" placeholder="Ex. Email court avec 3 puces clés...">
+    </div>
 
-<div>
-<label for="generator-o"><strong>Objectif</strong></label>
-<input type="text" id="generator-o" placeholder="Ex. Rédige un mail pour annoncer la nouvelle charte...">
-</div>
+    <div>
+      <label for="generator-t">Ton</label>
+      <input type="text" id="generator-t" placeholder="Ex. Professionnel, chaleureux et engageant...">
+    </div>
+  </div>
 
-<div>
-<label for="generator-f"><strong>Format</strong></label>
-<input type="text" id="generator-f" placeholder="Ex. Email court avec 3 puces clés...">
-</div>
+  <label for="generator-output">Aperçu du prompt généré</label>
+  <textarea id="generator-output" readonly></textarea>
 
-<div>
-<label for="generator-t"><strong>Ton</strong></label>
-<input type="text" id="generator-t" placeholder="Ex. Professionnel, chaleureux et engageant...">
-</div>
-
-</div>
-
-<label for="generator-output"><strong>Aperçu du prompt généré</strong></label>
-<textarea id="generator-output" readonly></textarea>
-
-<div class="wiki-actions">
-  <button type="button" id="generator-copy" class="wiki-button primary">📋 Copier le prompt</button>
-</div>
-
+  <div class="wiki-actions">
+    <button type="button" id="generator-copy" class="wiki-button primary">📋 Copier le prompt</button>
+  </div>
 </div>
 
 ---
@@ -98,10 +95,10 @@ Utilisez ce module pour construire rapidement un prompt structuré.
 
     | Problème rencontré | Reformulation utile |
     | :--- | :--- |
-    | **Hallucination / invention** | *Base-toi exclusivement sur le texte fourni. Si l’information n’y figure pas, réponds : « Information non disponible ».*
-    | **Réponse trop longue ou vague** | *Réponds sous forme de tableau à 3 colonnes [Élément, Impact, Recommandation] en 150 mots maximum.*
-    | **Jargon / ton inadapté** | *Reformule avec la méthode FALC pour un public non technique.*
-    | **Réponse incomplète** | *Découpe la réponse en 3 étapes successives et attends ma validation entre chaque étape.*
+    | **Hallucination / invention** | *Base-toi exclusivement sur le texte fourni. Si l’information n’y figure pas, réponds : « Information non disponible ».* |
+    | **Réponse trop longue ou vague** | *Réponds sous forme de tableau à 3 colonnes [Élément, Impact, Recommandation] en 150 mots maximum.* |
+    | **Jargon / ton inadapté** | *Reformule avec la méthode FALC pour un public non technique.* |
+    | **Réponse incomplète** | *Découpe la réponse en 3 étapes successives et attends ma validation entre chaque étape.* |
 
 ---
 
