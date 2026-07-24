@@ -30,27 +30,35 @@ Elle sert à identifier vos points forts et les sujets à revoir pendant le parc
 
 <div id="evaluation-entree" class="evaluation-entree">
 
-  <div class="eval-identite">
+  <div id="eval-intro" class="eval-identite">
     <h2>Informations</h2>
 
-    <label for="eval-nom"><strong>Nom / prénom ou identifiant :</strong></label>
-    <input type="text" id="eval-nom" placeholder="Ex : Camille Martin" />
+    <form id="eval-form">
+      <label for="eval-nom"><strong>Nom / prénom ou identifiant :</strong></label>
+      <input type="text" id="eval-nom" placeholder="Ex : Camille Martin" required />
 
-    <label for="eval-date"><strong>Date :</strong></label>
-    <input type="date" id="eval-date" />
+      <label for="eval-date"><strong>Date :</strong></label>
+      <input type="date" id="eval-date" required />
+
+      <div class="eval-actions">
+        <button type="button" id="eval-start">Commencer l’évaluation</button>
+      </div>
+    </form>
   </div>
 
-  <div id="eval-questions"></div>
+  <div id="eval-quiz" style="display:none;">
+    <div id="eval-questions"></div>
 
-  <div class="eval-actions">
-    <button type="button" id="eval-submit">Voir mon résultat</button>
-    <button type="button" id="eval-show-answers" style="display:none;">Afficher les bonnes réponses</button>
-    <button type="button" id="eval-print" style="display:none;">Sauvegarder / imprimer en PDF</button>
-    <button type="button" id="eval-reset">Recommencer</button>
+    <div class="eval-actions">
+      <button type="button" id="eval-submit">Voir mon résultat</button>
+      <button type="button" id="eval-show-answers" style="display:none;">Afficher les bonnes réponses</button>
+      <button type="button" id="eval-print" style="display:none;">Sauvegarder / imprimer en PDF</button>
+      <button type="button" id="eval-reset">Recommencer</button>
+    </div>
+
+    <div id="eval-resultat" class="eval-resultat" style="display:none;"></div>
+    <div id="eval-correction" class="eval-correction" style="display:none;"></div>
   </div>
-
-  <div id="eval-resultat" class="eval-resultat" style="display:none;"></div>
-  <div id="eval-correction" class="eval-correction" style="display:none;"></div>
 
 </div>
 
@@ -81,6 +89,10 @@ Elle sert à identifier vos points forts et les sujets à revoir pendant le parc
   border-radius: 6px;
   background: var(--md-default-bg-color, #fff);
   color: var(--md-typeset-color, #000);
+}
+
+#eval-form .eval-actions {
+  margin-top: 18px;
 }
 
 .eval-question {
@@ -145,6 +157,12 @@ Elle sert à identifier vos points forts et les sujets à revoir pendant le parc
 
 .eval-actions button:hover {
   transform: translateY(-2px);
+}
+
+.eval-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .eval-actions button#eval-reset {
