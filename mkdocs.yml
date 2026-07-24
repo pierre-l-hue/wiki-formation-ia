@@ -41,6 +41,7 @@ extra_javascript:
   - javascripts/prompting-avance.js
   - javascripts/contexte-memoire.js
   - javascripts/reduction-hallucinations.js
+  - javascripts/reduction-hallucinations.js
 
 extra_css:
   - stylesheets/extra.css
