@@ -38,6 +38,7 @@ extra_javascript:
   - javascripts/prompt-generator.js
   - javascripts/prompting-avance.js
   - javascripts/contexte-memoire.js
+  - javascripts/reduction-hallucinations.js
   
 extra_css:
   - stylesheets/extra.css
