@@ -18,6 +18,8 @@
 
 </div>
 
+---
+
 *Usages, souveraineté et limites.*
 
 !!! info "Évolution récente"
