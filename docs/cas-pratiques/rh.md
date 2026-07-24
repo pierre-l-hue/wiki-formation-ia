@@ -1,145 +1,159 @@
 # Cas pratique — Ressources humaines
 
-Les métiers des Ressources Humaines manipulent quotidiennement des informations stratégiques et sensibles. Ce cas pratique montre comment utiliser l'IA générative comme assistant de rédaction et d'analyse pour vos documents RH (offres d'emploi, grilles d'évaluation, communications internes) tout en respectant scrupuleusement la confidentialité et le cadre légal.
+Dans les ressources humaines, de nombreux documents demandent à la fois rigueur, clarté et confidentialité. Ce cas pratique montre comment utiliser l’IA comme assistant de rédaction et d’analyse pour produire des documents RH utiles, tout en respectant les règles de sécurité, de conformité et de non-discrimination.
 
 <div class="summary-box">
-
 <h3>🎯 Objectifs opérationnels</h3>
 
-* **Optimiser la marque employeur :** rédiger des offres d'emploi attractives, claires et exemptes de biais discriminatoires.
-* **Structurer les processus RH :** concevoir des grilles d'entretien objectives et des trames d'évaluation homogènes.
-* **Garantir la conformité et la sécurité :** anonymiser à 100 % les données RH et conserver le jugement humain au cœur des décisions.
-
+- Rédiger des offres d’emploi plus claires, attractives et inclusives.
+- Structurer les processus RH avec des trames, des grilles et des supports homogènes.
+- Protéger les données sensibles et garder la décision finale du côté humain.
 </div>
 
 ---
 
-## 📌 Situation de départ
+## Situation de départ
 
-Vous devez produire régulièrement des documents RH structurants : annonces de recrutement, notes de cadrage interne, grilles de compétences, comptes-rendus d'échange ou communications relatives à la vie de l'entreprise.
+Les équipes RH produisent régulièrement des offres d’emploi, des notes internes, des grilles d’entretien, des documents de cadrage et des supports de communication liés à la vie de l’entreprise.
 
 <div class="real-life-box">
-
 <h3>💼 Dans la vraie vie</h3>
 
-L'IA est un **outil d'aide à la décision et à la rédaction**, jamais un décideur. Les arbitrages stratégiques (recrutement, promotion, sanction, évaluation) relèvent toujours de la responsabilité exclusive des professionnels RH (*Human in the loop*).
-
+L’IA aide à rédiger, reformuler, structurer ou relire.  
+Elle ne décide jamais à la place des professionnels RH.  
+Le recrutement, l’évaluation, la promotion ou la sanction restent des décisions humaines.
 </div>
 
 ---
 
-## 🛠️ Tâches ciblées & opportunités IA
+## Tâches ciblées et opportunités IA
 
 <div class="wiki-grid">
 
 <div class="wiki-card">
 <div class="wiki-card-icon">📢</div>
-<h3>Offres d'emploi</h3>
-<p>Clarifier les missions, valoriser le poste et éliminer les critères involontairement discriminants.</p>
-<span class="wiki-badge success">Gain de temps : Très élevé</span>
+<h3>Offres d’emploi</h3>
+<p>Clarifier les missions, valoriser le poste et repérer les formulations à risque ou peu inclusives.</p>
+<span class="wiki-badge success">Gain de temps : très élevé</span>
 </div>
 
 <div class="wiki-card">
 <div class="wiki-card-icon">📋</div>
-<h3>Grilles d'entretien</h3>
-<p>Structurer des questionnaires d'évaluation par compétences pour garantir l'équité entre candidats.</p>
-<span class="wiki-badge success">Gain de temps : Élevé</span>
+<h3>Grilles d’entretien</h3>
+<p>Construire des questions par compétence pour comparer les candidatures de façon plus homogène.</p>
+<span class="wiki-badge success">Gain de temps : élevé</span>
 </div>
 
 <div class="wiki-card">
 <div class="wiki-card-icon">✉️</div>
 <h3>Communications internes</h3>
-<p>Simplifier des notes administratives ou juridiques pour les rendre compréhensibles par tous les salariés.</p>
-<span class="wiki-badge">Gain de temps : Moyen</span>
+<p>Reformuler des notes RH ou administratives pour les rendre plus claires et plus accessibles.</p>
+<span class="wiki-badge">Gain de temps : moyen</span>
 </div>
 
 <div class="wiki-card">
 <div class="wiki-card-icon">🔍</div>
-<h3>Analyse d'inclusivité</h3>
-<p>Détecter les formulations excluantes ou les biais de genre/âge dans vos documents de recrutement.</p>
-<span class="wiki-badge">Gain de temps : Élevé</span>
+<h3>Analyse d’inclusivité</h3>
+<p>Repérer les biais de formulation liés au genre, à l’âge, au parcours ou aux stéréotypes implicites.</p>
+<span class="wiki-badge">Gain de temps : élevé</span>
 </div>
 
 </div>
 
 ---
 
-## 💡 Prompt modèle (Framework CROFT)
+## Prompt modèle (Framework CROFT)
 
-Utilisez cette structure prête à l'emploi pour analyser et optimiser une offre d'emploi avant publication :
+Ce modèle de prompt sert à analyser et améliorer une offre d’emploi avant publication.
 
 ```text
 CONTEXTE :
-Je suis responsable RH dans une entreprise du secteur [Indiquer le secteur]. 
-Je souhaite réviser une offre d'emploi pour la rendre plus claire, attractive et inclusive.
+Je suis responsable RH dans une entreprise du secteur [indiquer le secteur].
+Je souhaite réviser une offre d’emploi pour la rendre plus claire, attractive et inclusive.
 
 RÔLE :
-Agis en tant qu'expert en recrutement, marque employeur et communication inclusive.
+Agis comme un expert en recrutement, communication RH et rédaction inclusive.
 
 OBJECTIF :
-Analyse le texte ci-dessous, signale les biais ou formulations à risque, puis propose une version optimisée.
+Analyse le texte ci-dessous, signale les biais ou formulations à risque,
+puis propose une version améliorée.
 
 CONTRAINTES :
-- Ne pas modifier le niveau réel d'expérience requis ni la rémunération.
-- Éliminer tout stéréotype (âge, genre, profil type).
+- Ne pas modifier le niveau réel d’expérience requis ni la rémunération.
+- Éliminer les stéréotypes liés à l’âge, au genre ou au profil type.
 - Utiliser des termes clairs et un ton engageant.
-- Signaler explicitement les termes corrigés et la raison de la modification.
+- Signaler les formulations corrigées et expliquer pourquoi.
 
 FORMAT :
-1. Liste des points de vigilance / biais identifiés.
-2. Proposition d'offre révisée (Intitulé, Missions, Profil recherché, Avantages).
+1. Liste des points de vigilance repérés.
+2. Proposition d’offre révisée :
+   - Intitulé
+   - Missions
+   - Profil recherché
+   - Avantages
 
-TEXTE DE L'OFFRE (ANONYMISÉ) :
-"[Coller ici le texte de votre offre]"
+TEXTE DE L’OFFRE (ANONYMISÉ) :
+"[Coller ici le texte de l’offre]"
 ```
 
 ---
 
-## ⚠️ Vigilance & Données confidentielles RH
+## Vigilance sur les données RH
 
 <div class="warning-practice-box">
-
 <h3>🛑 À éviter absolument</h3>
 
-Le RGPD et le secret professionnel imposent de ne **jamais** soumettre à une IA des données nominatives ou sensibles :
+Ne jamais envoyer dans une IA des données nominatives ou sensibles comme :
 
-* Noms, prénoms ou coordonnées de candidats ou de collaborateurs.
-* Montants de rémunération, fiches de paie ou packages individuels.
-* Informations de santé, arrêts maladie, données sur le handicap.
-* Comptes-rendus d'entretiens annuels, évaluations ou appréciations individuelles.
-* Dossiers disciplinaires, conflits internes ou procédures de départ.
-
+- les noms, prénoms ou coordonnées de candidats ou de collaborateurs ;
+- les montants de rémunération individuels, fiches de paie ou avantages personnalisés ;
+- les données de santé, arrêts maladie ou informations liées au handicap ;
+- les évaluations individuelles, comptes rendus d’entretien ou appréciations nominatives ;
+- les dossiers disciplinaires, conflits internes ou procédures de départ.
 </div>
 
 <div class="good-reflex-box">
+<h3>✅ Le bon réflexe : anonymiser et relire</h3>
 
-<h3>✅ Le bon réflexe : La relecture critique et l'anonymisation</h3>
+Pour tout usage RH de l’IA :
 
-Pour tous vos travaux RH à l'aide de l'IA :
-
-* **Masquez systématiquement** les données personnelles avant tout envoi (`[Collaborateur A]`, `[Poste X]`).
-* **Relisez avec rigueur** juridique : l'IA ne connaît ni les accords d'entreprise spécifiques ni les évolutions du droit du travail en temps réel.
-* **Maintenez le dialogue humain** : l'évaluation et l'empathie ne s'automatisent pas.
-
+- masquer systématiquement les données personnelles avant tout envoi ;
+- remplacer les éléments identifiants par des repères neutres comme `[Candidat A]`, `[Collaborateur B]` ou `[Poste X]` ;
+- relire le résultat avec un regard juridique, humain et métier avant toute diffusion ou décision.
 </div>
 
 ---
 
-## 🚀 Checklist de validation RH
+## Rendre une offre plus inclusive
+
+<div class="real-life-box">
+<h3>🧩 Exemple de vigilance</h3>
+
+Une offre d’emploi peut exclure sans le vouloir si elle :
+
+- utilise un vocabulaire stéréotypé ou trop agressif ;
+- liste trop d’exigences secondaires ;
+- emploie du jargon difficile à comprendre ;
+- laisse entendre un profil type lié à l’âge, au genre ou au parcours.
+
+L’IA peut aider à repérer ces signaux, mais la validation finale reste humaine.
+</div>
+
+---
+
+## Checklist de validation RH
 
 <div class="summary-box">
+<h3>Avant de diffuser ou d’utiliser un document RH généré avec l’IA</h3>
 
-<h3>Avant de diffuser ou d'exploiter un document RH généré par l'IA :</h3>
-
-1. Le document respecte-t-il les obligations légales et les conventions collectives applicables ?
-2. Toutes les données nominatives ou confidentielles ont-elles été complètement retirées de l'historique des échanges ?
-3. La décision finale reste-t-elle portée et assumée par un humain ?
-
+1. Le document respecte-t-il les obligations légales et les règles internes applicables ?
+2. Toutes les données personnelles ou sensibles ont-elles été retirées avant l’échange avec l’IA ?
+3. La décision finale est-elle bien prise, expliquée et assumée par un humain ?
 </div>
 
 ---
 
 <div class="wiki-actions">
-  <a class="wiki-button primary" href="../">Vue d'ensemble des cas pratiques ➔</a>
+  <a class="wiki-button primary" href="../">Vue d’ensemble des cas pratiques ➔</a>
   <a class="wiki-button" href="./communication/">⬅️ Cas précédent : Communication</a>
 </div>
