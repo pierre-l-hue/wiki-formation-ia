@@ -2,10 +2,6 @@
 
 <div class="wiki-grid">
 
-<div class="wiki-card" markdown="block">
-  <div class="wiki-card-icon">✨</div>
-  <h3>Gemini</h3>
-
   ![Logo Gemini](../assets/gemini-logo.png){ width="80" height="80" }
 
   *Rédiger, chercher, résumer, apprendre et travailler plus vite avec l’écosystème Google.*
