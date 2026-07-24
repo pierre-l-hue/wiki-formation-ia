@@ -1,24 +1,17 @@
-# Mistral
-
-
-<div class="wiki-grid">
-
-
 <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
-
+  <!-- CONTENEUR CARRÉ FIXE -->
   <div style="width: 80px; height: 80px; min-width: 80px; max-height: 80px; border-radius: 16px; border: 1px solid #e0e0e0; box-shadow: 0 4px 10px rgba(0,0,0,0.06); background: #ffffff; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 8px;">
-    <img src="../assets/mistral-logo.png" alt="Logo Mistral" width="80" height="80" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+    <img src="/wiki-formation-ia/assets/mistral-logo.png" alt="Logo Mistral" width="80" height="80" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
   </div>
 
+  <!-- TITRE ET LIEN OFFICIEL -->
   <div>
-    <a href="https://mistral.ai" target="_blank" rel="noopener" class="md-button md-button--primary" style="font-size: 12px; padding: 4px 12px; font-weight: 600;">
-      🌐 Accéder à l’outil (mistral.ai) ↗
+    <h1 style="margin: 0 0 8px 0; border: none; padding: 0;">Mistral</h1>
+    <a href="https://chat.mistral.ai/" target="_blank" rel="noopener" class="md-button md-button--primary" style="font-size: 12px; padding: 4px 12px; font-weight: 600;">
+      🌐 Accéder à l'outil (chat.mistral.ai/) ↗
     </a>
   </div>
-
 </div>
-
----
 
 *Usages, souveraineté et limites.*
 
