@@ -389,10 +389,11 @@ function initEvaluationEntree() {
   if (
     !introBox || !form || !startBtn || !quizBox ||
     !container || !resultBox || !correctionBox ||
-    !submitBtn || !showAnswersBtn || !printBtn || !resetBtn
+    !submitBtn || !showAnswersBtn || !printBtn || !resetBtn ||
+    !dateInput || !nameInput
   ) return;
 
-  if (dateInput && !dateInput.value) {
+  if (!dateInput.value) {
     const today = new Date().toISOString().slice(0, 10);
     dateInput.value = today;
   }
@@ -539,7 +540,7 @@ function initEvaluationEntree() {
     return {
       label: "Niveau très avancé",
       message: "Vous maîtrisez déjà beaucoup de notions. La formation servira à renforcer vos réflexes professionnels et votre préparation à la certification."
-      };
+    };
   }
 
   function calculateScore() {
@@ -562,8 +563,8 @@ function initEvaluationEntree() {
       return answer === null;
     }).length;
     const level = getLevel(score);
-    const nom = nameInput && nameInput.value ? nameInput.value : "Non renseigné";
-    const date = dateInput && dateInput.value ? dateInput.value : "Non renseignée";
+    const nom = nameInput.value ? nameInput.value : "Non renseigné";
+    const date = dateInput.value ? dateInput.value : "Non renseignée";
 
     resultBox.style.display = "block";
     showAnswersBtn.style.display = "inline-block";
@@ -612,14 +613,37 @@ function initEvaluationEntree() {
     correctionBox.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  startBtn.addEventListener("click", function () {
-    if (!form.reportValidity()) return;
+  function startEvaluation() {
+    const nameIsValid = nameInput.checkValidity();
+    const dateIsValid = dateInput.checkValidity();
+
+    if (!nameIsValid) {
+      nameInput.reportValidity();
+      nameInput.focus();
+      return;
+    }
+
+    if (!dateIsValid) {
+      dateInput.reportValidity();
+      dateInput.focus();
+      return;
+    }
 
     introBox.style.display = "none";
     quizBox.style.display = "block";
     currentQuestion = 0;
     renderQuestion(currentQuestion);
     updateSubmitVisibility();
+  }
+
+  startBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    startEvaluation();
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    startEvaluation();
   });
 
   submitBtn.addEventListener("click", renderResult);
@@ -643,12 +667,10 @@ function initEvaluationEntree() {
     }
 
     currentQuestion = 0;
+    nameInput.value = "";
 
-    if (nameInput) nameInput.value = "";
-    if (dateInput) {
-      const today = new Date().toISOString().slice(0, 10);
-      dateInput.value = today;
-    }
+    const today = new Date().toISOString().slice(0, 10);
+    dateInput.value = today;
 
     resultBox.style.display = "none";
     correctionBox.style.display = "none";
