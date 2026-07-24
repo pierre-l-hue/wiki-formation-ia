@@ -2,10 +2,6 @@
 
 <div class="wiki-grid">
 
-<div class="wiki-card" markdown="block">
-  <div class="wiki-card-icon">🤖</div>
-  <h3>ChatGPT</h3>
-
   ![Logo ChatGPT](../assets/chatgpt-logo.png){ width="80" height="80" }
 
   *Assistant généraliste et polyvalent pour écrire, apprendre, créer, chercher des idées et résoudre des problèmes du quotidien.*
