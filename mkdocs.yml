@@ -12,18 +12,21 @@ theme:
     text: Poppins
     code: Roboto Mono
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: blue
       accent: orange
       toggle:
         icon: material/brightness-7
         name: Passer en mode sombre
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: blue
       accent: orange
       toggle:
         icon: material/brightness-4
         name: Passer en mode clair
+      
   features:
     - navigation.tabs
     - navigation.sections
