@@ -2,10 +2,6 @@
 
 <div class="wiki-grid">
 
-<div class="wiki-card" markdown="block">
-  <div class="wiki-card-icon">🧠</div>
-  <h3>Claude</h3>
-
   ![Logo Claude](../assets/claude-logo.png){ width="80" height="80" }
 
   *Outil très utile pour rédiger, analyser des documents, réfléchir et traiter des demandes complexes.*
