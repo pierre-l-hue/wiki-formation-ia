@@ -253,3 +253,84 @@
     padding: 16px;
   }
 }
+/* =========================
+   Générateur de prompt
+   ========================= */
+
+.prompt-generator {
+  padding: 20px;
+  margin: 24px 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 16px;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.prompt-generator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.prompt-generator label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--md-default-fg-color--light);
+}
+
+.prompt-generator input,
+.prompt-generator textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  background: var(--md-code-bg-color);
+  color: var(--md-typeset-color);
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.prompt-generator input:focus,
+.prompt-generator textarea:focus {
+  outline: none;
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.12);
+}
+
+.prompt-generator textarea {
+  min-height: 150px;
+  resize: vertical;
+  margin-top: 6px;
+  font-family: var(--md-code-font-family);
+  line-height: 1.5;
+}
+
+.prompt-generator .wiki-actions {
+  margin-bottom: 0;
+}
+
+.prompt-generator .wiki-button {
+  cursor: pointer;
+  background: transparent;
+}
+
+.prompt-generator .wiki-button.primary {
+  border: 1px solid var(--md-primary-fg-color);
+}
+
+@media (max-width: 700px) {
+  .prompt-generator {
+    padding: 16px;
+  }
+
+  .prompt-generator-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prompt-generator textarea {
+    min-height: 130px;
+  }
+}
