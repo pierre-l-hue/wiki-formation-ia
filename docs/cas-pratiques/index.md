@@ -31,7 +31,7 @@ Choisissez votre domaine ou votre fonction pour découvrir des exemples de promp
       <span class="wiki-badge success">Niveau débutant</span>
     </div>
     <div style="margin-top: 16px;">
-      <a class="wiki-button primary" href="../assistant-administratif/">Voir le cas pratique ➔</a>
+      <a class="wiki-button primary" href="./assistant-administratif/">Voir le cas pratique ➔</a>
     </div>
   </div>
 
@@ -44,7 +44,7 @@ Choisissez votre domaine ou votre fonction pour découvrir des exemples de promp
       <span class="wiki-badge success">Niveau intermédiaire</span>
     </div>
     <div style="margin-top: 16px;">
-      <a class="wiki-button primary" href="../communication/">Voir le cas pratique ➔</a>
+      <a class="wiki-button primary" href="./communication/">Voir le cas pratique ➔</a>
     </div>
   </div>
 
@@ -57,7 +57,7 @@ Choisissez votre domaine ou votre fonction pour découvrir des exemples de promp
       <span class="wiki-badge warning">Point de vigilance RH</span>
     </div>
     <div style="margin-top: 16px;">
-      <a class="wiki-button primary" href="../rh/">Voir le cas pratique ➔</a>
+      <a class="wiki-button primary" href="./rh/">Voir le cas pratique ➔</a>
     </div>
   </div>
 
@@ -111,6 +111,6 @@ Pour vous garantir un apprentissage homogène, chaque cas pratique est découpé
 ---
 
 <div class="wiki-actions">
-  <a class="wiki-button primary" href="../assistant-administratif/">Commencer : Assistant administratif ➔</a>
+  <a class="wiki-button primary" href="./assistant-administratif/">Commencer : Assistant administratif ➔</a>
   <a class="wiki-button" href="../../formation/quiz-final/">Revoir le Quiz Final</a>
 </div>
