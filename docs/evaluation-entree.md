@@ -203,368 +203,368 @@ Elle sert à identifier vos points forts et les sujets à revoir pendant le parc
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const questions = [
-    {
-      theme: "Bases de l’IA",
-      question: "Qu’est-ce qu’une IA générative ?",
-      options: [
-        "Un outil capable de produire du contenu à partir d’une consigne",
-        "Un moteur de recherche classique",
-        "Un logiciel qui ne fait que corriger l’orthographe",
-        "Un outil qui remplace totalement le jugement humain"
-      ],
-      correct: 0,
-      explain: "Une IA générative peut produire du texte, des images, du code ou d’autres contenus à partir d’un prompt."
-    },
-    {
-      theme: "Bases de l’IA",
-      question: "Quelle est une limite importante des IA génératives ?",
-      options: [
-        "Elles peuvent inventer des informations fausses",
-        "Elles ne peuvent jamais écrire de texte",
-        "Elles sont toujours exactes",
-        "Elles connaissent toujours les informations les plus récentes"
-      ],
-      correct: 0,
-      explain: "Une IA peut produire une réponse convaincante mais fausse. Il faut vérifier les informations importantes."
-    },
-    {
-      theme: "Bases de l’IA",
-      question: "Pourquoi faut-il donner du contexte dans un prompt ?",
-      options: [
-        "Pour aider l’IA à produire une réponse adaptée",
-        "Pour rendre le prompt plus long sans raison",
-        "Pour empêcher l’IA de répondre",
-        "Pour remplacer toute vérification humaine"
-      ],
-      correct: 0,
-      explain: "Le contexte permet à l’IA de comprendre la situation, le public, les contraintes et l’objectif."
-    },
-    {
-      theme: "Bases de l’IA",
-      question: "Quelle affirmation est la plus juste ?",
-      options: [
-        "L’IA assiste l’humain, mais l’humain garde la responsabilité finale",
-        "L’IA doit décider seule",
-        "L’IA ne fait jamais d’erreur",
-        "L’IA remplace toujours l’expertise métier"
-      ],
-      correct: 0,
-      explain: "Dans un usage professionnel, l’humain doit cadrer, vérifier et valider le résultat."
-    },
-    {
-      theme: "Bases de l’IA",
-      question: "Que signifie le terme “hallucination” en IA générative ?",
-      options: [
-        "Une information fausse produite avec assurance par l’IA",
-        "Une image toujours réaliste",
-        "Une réponse automatiquement certifiée",
-        "Un bug d’affichage du navigateur"
-      ],
-      correct: 0,
-      explain: "Une hallucination est une réponse fausse ou inventée, parfois formulée de manière très crédible."
-    },
-    {
-      theme: "Prompting",
-      question: "Que signifie la méthode ROFT ?",
-      options: [
-        "Rôle, Objectif, Format, Ton",
-        "Recherche, Organisation, Fichier, Texte",
-        "Résumé, Orthographe, Fichier, Traduction",
-        "Risque, Outil, Formation, Test"
-      ],
-      correct: 0,
-      explain: "ROFT est une méthode simple pour structurer un prompt efficace."
-    },
-    {
-      theme: "Prompting",
-      question: "Quel prompt est le plus efficace ?",
-      options: [
-        "Tu es chargé de communication. Rédige un email court et professionnel pour relancer un client après un devis sans réponse.",
-        "Fais un mail.",
-        "Écris quelque chose.",
-        "Aide-moi vite."
-      ],
-      correct: 0,
-      explain: "Un bon prompt précise le rôle, l’objectif, le format et le ton."
-    },
-    {
-      theme: "Prompting",
-      question: "À quoi sert la méthode CROFT ?",
-      options: [
-        "À ajouter le contexte à la méthode ROFT",
-        "À supprimer le ton du prompt",
-        "À générer uniquement des images",
-        "À éviter toute consigne"
-      ],
-      correct: 0,
-      explain: "CROFT ajoute le Contexte à Rôle, Objectif, Format et Ton."
-    },
-    {
-      theme: "Prompting",
-      question: "Que faut-il faire si le sujet est complexe ou flou ?",
-      options: [
-        "Demander à l’IA de poser des questions de clarification avant de répondre",
-        "Donner le moins d’informations possible",
-        "Accepter la première réponse sans vérification",
-        "Écrire uniquement un mot-clé"
-      ],
-      correct: 0,
-      explain: "Demander des questions de clarification limite les suppositions et améliore la qualité de la réponse."
-    },
-    {
-      theme: "Prompting",
-      question: "Pourquoi faut-il préciser le format attendu ?",
-      options: [
-        "Pour obtenir une réponse directement exploitable",
-        "Pour compliquer inutilement la demande",
-        "Pour empêcher l’IA de structurer sa réponse",
-        "Pour éviter la relecture humaine"
-      ],
-      correct: 0,
-      explain: "Le format permet d’obtenir un email, un tableau, une liste ou une synthèse adaptée au besoin."
-    },
-    {
-      theme: "Outils IA",
-      question: "Quel outil est le plus adapté pour rédiger un premier brouillon d’email ?",
-      options: [
-        "Un assistant IA généraliste",
-        "Un outil de détourage d’image",
-        "Un logiciel de compression",
-        "Un agenda en ligne"
-      ],
-      correct: 0,
-      explain: "Un assistant IA généraliste est adapté aux tâches rédactionnelles simples."
-    },
-    {
-      theme: "Outils IA",
-      question: "Quel outil est utile pour interroger un corpus de documents fournis par l’utilisateur ?",
-      options: [
-        "Un outil de type assistant documentaire",
-        "Un outil de recadrage photo",
-        "Un correcteur d’écran",
-        "Un outil météo"
-      ],
-      correct: 0,
-      explain: "Un assistant documentaire permet de travailler à partir de documents donnés."
-    },
-    {
-      theme: "Outils IA",
-      question: "Avant de choisir un outil IA, quelle est la bonne première étape ?",
-      options: [
-        "Identifier la tâche réelle à améliorer",
-        "Choisir l’outil le plus connu",
-        "Créer un compte partout",
-        "Ignorer les risques de données"
-      ],
-      correct: 0,
-      explain: "On part du besoin métier avant de choisir l’outil."
-    },
-    {
-      theme: "Outils IA",
-      question: "Pourquoi faut-il comparer les outils IA ?",
-      options: [
-        "Parce qu’ils n’ont pas les mêmes usages, limites et garanties",
-        "Parce qu’ils font tous exactement la même chose",
-        "Parce que le plus cher est toujours le meilleur",
-        "Parce qu’il faut utiliser tous les outils disponibles"
-      ],
-      correct: 0,
-      explain: "Chaque outil a ses forces, ses limites, son modèle économique et ses conditions d’utilisation."
-    },
-    {
-      theme: "Données sensibles",
-      question: "Quelle information ne doit pas être copiée telle quelle dans une IA grand public ?",
-      options: [
-        "Le nom complet d’un client avec son email",
-        "Une consigne générale sans donnée personnelle",
-        "Un exemple fictif",
-        "Une question théorique"
-      ],
-      correct: 0,
-      explain: "Les données personnelles doivent être protégées et anonymisées si nécessaire."
-    },
-    {
-      theme: "Données sensibles",
-      question: "Quel est le bon réflexe avant de coller un texte professionnel dans une IA ?",
-      options: [
-        "Repérer et anonymiser les données sensibles",
-        "Coller tout le document sans relecture",
-        "Ajouter plus de données personnelles",
-        "Envoyer le document à plusieurs IA différentes"
-      ],
-      correct: 0,
-      explain: "Il faut relire et anonymiser les données personnelles, confidentielles ou sensibles."
-    },
-    {
-      theme: "Données sensibles",
-      question: "Lequel de ces éléments est une donnée sensible ou confidentielle ?",
-      options: [
-        "Un salaire individuel",
-        "Une phrase fictive",
-        "Un exemple inventé",
-        "Un titre générique"
-      ],
-      correct: 0,
-      explain: "Un salaire individuel est une information RH sensible."
-    },
-    {
-      theme: "Données sensibles",
-      question: "Que signifie anonymiser un texte ?",
-      options: [
-        "Remplacer ou supprimer les informations permettant d’identifier une personne ou une organisation",
-        "Ajouter des noms réels",
-        "Mettre le texte en majuscules",
-        "Changer uniquement la police"
-      ],
-      correct: 0,
-      explain: "Anonymiser consiste à retirer ou remplacer les informations identifiantes ou sensibles."
-    },
-    {
-      theme: "Données sensibles",
-      question: "Pourquoi faut-il vérifier les conditions d’utilisation d’un outil IA ?",
-      options: [
-        "Pour savoir comment les données peuvent être stockées ou utilisées",
-        "Pour changer la couleur de l’interface",
-        "Pour éviter d’écrire un prompt",
-        "Pour supprimer toute responsabilité humaine"
-      ],
-      correct: 0,
-      explain: "Les politiques de confidentialité varient selon les outils et les offres."
-    },
-    {
-      theme: "Accessibilité",
-      question: "Un contenu accessible est un contenu qui...",
-      options: [
-        "peut être compris et utilisé par le plus grand nombre",
-        "utilise toujours des phrases longues",
-        "contient beaucoup de jargon",
-        "repose uniquement sur la couleur"
-      ],
-      correct: 0,
-      explain: "L’accessibilité vise à rendre un contenu utilisable par des publics variés."
-    },
-    {
-      theme: "Accessibilité",
-      question: "Quelle bonne pratique améliore la compréhension d’un texte ?",
-      options: [
-        "Utiliser des phrases courtes et une structure claire",
-        "Multiplier les sigles non expliqués",
-        "Écrire des paragraphes très longs",
-        "Supprimer tous les titres"
-      ],
-      correct: 0,
-      explain: "Les phrases courtes, les titres et les listes facilitent la lecture."
-    },
-    {
-      theme: "Accessibilité",
-      question: "Que faut-il éviter dans un contenu inclusif ?",
-      options: [
-        "Les stéréotypes et formulations stigmatisantes",
-        "Les exemples variés",
-        "Les phrases simples",
-        "Les titres explicites"
-      ],
-      correct: 0,
-      explain: "Un contenu inclusif évite les stéréotypes, les jugements et les formulations excluantes."
-    },
-    {
-      theme: "Accessibilité",
-      question: "Pourquoi demander à l’IA de simplifier un texte peut être utile ?",
-      options: [
-        "Pour rendre le contenu plus clair pour différents publics",
-        "Pour rendre le contenu moins fiable",
-        "Pour supprimer toutes les informations importantes",
-        "Pour éviter toute relecture humaine"
-      ],
-      correct: 0,
-      explain: "La simplification aide à rendre le contenu plus compréhensible, sans supprimer le sens."
-    },
-    {
-      theme: "Éthique et biais",
-      question: "Qu’est-ce qu’un biais dans une réponse IA ?",
-      options: [
-        "Une réponse qui reproduit un stéréotype ou une discrimination",
-        "Une réponse toujours neutre",
-        "Une réponse sans aucun risque",
-        "Une réponse obligatoirement officielle"
-      ],
-      correct: 0,
-      explain: "Les IA peuvent reproduire des biais présents dans les données ou les formulations."
-    },
-    {
-      theme: "Éthique et biais",
-      question: "Quel est le bon réflexe avant de publier un contenu généré par IA ?",
-      options: [
-        "Le relire, vérifier les faits et repérer les biais possibles",
-        "Le publier immédiatement",
-        "Supprimer les sources",
-        "Faire confiance automatiquement à l’IA"
-      ],
-      correct: 0,
-      explain: "La validation humaine reste indispensable avant diffusion."
-    },
-    {
-      theme: "Éthique et biais",
-      question: "Dans quel cas faut-il être particulièrement vigilant avec l’IA ?",
-      options: [
-        "Pour des décisions liées au recrutement, à l’évaluation ou à l’accès à un service",
-        "Pour corriger une faute d’orthographe simple",
-        "Pour reformuler un texte fictif",
-        "Pour générer une idée de titre sans enjeu"
-      ],
-      correct: 0,
-      explain: "Les décisions qui affectent des personnes nécessitent une vigilance éthique et juridique renforcée."
-    },
-    {
-      theme: "Éthique et biais",
-      question: "Que faut-il faire si une réponse IA semble stéréotypée ?",
-      options: [
-        "Demander un audit des biais et reformuler le contenu",
-        "La publier telle quelle",
-        "Ignorer le problème",
-        "Ajouter encore plus de stéréotypes"
-      ],
-      correct: 0,
-      explain: "Il faut repérer le problème, comprendre le risque et proposer une version corrigée."
-    },
-    {
-      theme: "Éthique et biais",
-      question: "Quel principe est essentiel dans un usage responsable de l’IA ?",
-      options: [
-        "La supervision humaine",
-        "L’automatisation sans contrôle",
-        "L’absence de vérification",
-        "La publication immédiate"
-      ],
-      correct: 0,
-      explain: "L’humain doit garder le contrôle et la responsabilité finale."
-    },
-    {
-      theme: "Vérification",
-      question: "Que faire si l’IA donne une information chiffrée importante ?",
-      options: [
-        "Vérifier avec une source fiable",
-        "La recopier sans contrôle",
-        "La transformer en opinion",
-        "Supprimer le contexte"
-      ],
-      correct: 0,
-      explain: "Les chiffres, dates, sources et affirmations importantes doivent être vérifiés."
-    },
-    {
-      theme: "Vérification",
-      question: "Quelle est la meilleure attitude face à une réponse IA ?",
-      options: [
-        "La considérer comme une proposition à vérifier",
-        "La considérer comme une vérité absolue",
-        "La publier sans relecture",
-        "La transmettre sans contexte"
-      ],
-      correct: 0,
-      explain: "Une réponse IA est une aide, pas une validation automatique."
-    }
-  ];
+const questions = [
+  {
+    theme: "Bases de l’IA",
+    question: "Dans un usage professionnel, quelle description de l’IA générative est la plus juste ?",
+    options: [
+      "Un outil qui garantit automatiquement la conformité des contenus",
+      "Un outil qui produit des contenus à partir de consignes, mais dont les réponses doivent être vérifiées",
+      "Un moteur de recherche qui cite toujours ses sources",
+      "Un logiciel qui applique uniquement des règles fixes programmées à l’avance"
+    ],
+    correct: 1,
+    explain: "L’IA générative produit des contenus à partir de prompts, mais elle peut se tromper. La vérification humaine reste indispensable."
+  },
+  {
+    theme: "Bases de l’IA",
+    question: "Vous demandez à une IA de résumer un document. Quel est le principal risque si le document source n’est pas fourni ?",
+    options: [
+      "L’IA peut compléter avec des informations plausibles mais non vérifiées",
+      "L’IA refusera toujours de répondre",
+      "L’IA produira forcément un résumé exact",
+      "L’IA supprimera automatiquement les données sensibles"
+    ],
+    correct: 0,
+    explain: "Sans source fiable, l’IA peut inventer ou généraliser des informations."
+  },
+  {
+    theme: "Bases de l’IA",
+    question: "Quelle attitude est la plus adaptée face à une réponse IA très bien rédigée ?",
+    options: [
+      "La publier directement si le style est professionnel",
+      "La considérer comme fiable si elle contient des chiffres",
+      "La relire, vérifier les informations importantes et l’adapter au contexte",
+      "La reformuler automatiquement avec une autre IA"
+    ],
+    correct: 2,
+    explain: "Une réponse bien écrite peut contenir des erreurs. Le style ne garantit pas la fiabilité."
+  },
+  {
+    theme: "Bases de l’IA",
+    question: "Pourquoi une IA peut-elle produire deux réponses différentes à une même demande ?",
+    options: [
+      "Parce qu’elle refuse les demandes répétées",
+      "Parce qu’elle ne fonctionne que de façon aléatoire",
+      "Parce qu’elle ne garde jamais le contexte",
+      "Parce qu’elle génère une réponse probable selon le contexte, le modèle et les paramètres"
+    ],
+    correct: 3,
+    explain: "Les modèles génératifs produisent des réponses probables, qui peuvent varier selon le contexte et les paramètres."
+  },
+  {
+    theme: "Bases de l’IA",
+    question: "Dans quel cas l’usage de l’IA est-il le plus pertinent ?",
+    options: [
+      "Produire un premier brouillon à relire et améliorer",
+      "Prendre seule une décision RH sensible",
+      "Remplacer une validation juridique obligatoire",
+      "Publier une information chiffrée sans source"
+    ],
+    correct: 0,
+    explain: "L’IA est très utile pour produire un brouillon, structurer une idée ou reformuler, mais l’humain doit valider."
+  },
+  {
+    theme: "Prompting",
+    question: "Quel élément manque le plus dans ce prompt : “Fais-moi un texte sur notre nouveau service” ?",
+    options: [
+      "La ponctuation",
+      "Le contexte, la cible, le format et le ton",
+      "Le nom exact du logiciel utilisé",
+      "Une demande de traduction"
+    ],
+    correct: 1,
+    explain: "Le prompt est trop vague : il manque le contexte, l’objectif précis, le public, le format et le ton."
+  },
+  {
+    theme: "Prompting",
+    question: "Quel prompt est le plus exploitable pour un usage professionnel ?",
+    options: [
+      "Écris mieux ce texte.",
+      "Fais plus professionnel.",
+      "Tu es chargé de relation client. Reformule ce message pour un client mécontent, avec un ton calme, clair et empathique, en moins de 120 mots.",
+      "Rends ça bien."
+    ],
+    correct: 2,
+    explain: "Le troisième prompt précise le rôle, l’objectif, le public, le ton et la contrainte de longueur."
+  },
+  {
+    theme: "Prompting",
+    question: "Quand est-il utile de demander à l’IA de poser des questions avant de répondre ?",
+    options: [
+      "Quand la demande est urgente mais très simple",
+      "Quand la demande est complexe, floue ou à enjeu",
+      "Uniquement pour générer des images",
+      "Jamais, car cela ralentit toujours le travail"
+    ],
+    correct: 1,
+    explain: "Pour une demande complexe ou sensible, les questions de clarification réduisent les malentendus."
+  },
+  {
+    theme: "Prompting",
+    question: "Dans la méthode CROFT, le “C” sert surtout à...",
+    options: [
+      "corriger automatiquement les fautes",
+      "choisir le modèle d’IA",
+      "donner la situation, les contraintes et les informations utiles",
+      "citer des sources officielles"
+    ],
+    correct: 2,
+    explain: "Le contexte aide l’IA à produire une réponse adaptée à la situation réelle."
+  },
+  {
+    theme: "Prompting",
+    question: "Vous obtenez une réponse trop générale. Quelle action est la plus pertinente ?",
+    options: [
+      "Supprimer le contexte du prompt",
+      "Demander une réponse plus longue sans autre précision",
+      "Changer la police du texte",
+      "Ajouter des contraintes, un exemple attendu et le public cible"
+    ],
+    correct: 3,
+    explain: "Une réponse générale vient souvent d’un prompt trop vague. Il faut ajouter contexte, contraintes et exemples."
+  },
+  {
+    theme: "Outils IA",
+    question: "Pour choisir un outil IA, quelle démarche est la plus professionnelle ?",
+    options: [
+      "Choisir l’outil le plus populaire",
+      "Identifier la tâche, le niveau de risque, les données utilisées et le résultat attendu",
+      "Utiliser systématiquement le même outil pour tous les besoins",
+      "Choisir uniquement l’outil gratuit"
+    ],
+    correct: 1,
+    explain: "Le bon choix dépend du besoin métier, du risque, des données et du niveau de qualité attendu."
+  },
+  {
+    theme: "Outils IA",
+    question: "Un assistant documentaire est surtout utile pour...",
+    options: [
+      "créer un logo à partir d’une image",
+      "remplacer un logiciel de paie",
+      "interroger et synthétiser des documents fournis",
+      "publier automatiquement sur les réseaux sociaux"
+    ],
+    correct: 2,
+    explain: "Un assistant documentaire sert à travailler à partir de documents donnés par l’utilisateur."
+  },
+  {
+    theme: "Outils IA",
+    question: "Pourquoi faut-il rester prudent avec les outils IA gratuits grand public ?",
+    options: [
+      "Parce qu’ils ne savent jamais rédiger",
+      "Parce que leurs conditions d’utilisation et de traitement des données peuvent varier",
+      "Parce qu’ils sont toujours interdits",
+      "Parce qu’ils ne fonctionnent que pour les images"
+    ],
+    correct: 1,
+    explain: "Les outils gratuits peuvent avoir des politiques différentes sur la conservation ou l’utilisation des données."
+  },
+  {
+    theme: "Outils IA",
+    question: "Quel exemple montre une bonne adéquation entre besoin et outil ?",
+    options: [
+      "Utiliser un générateur d’image pour analyser un contrat confidentiel",
+      "Utiliser un outil de détourage pour rédiger une note RH",
+      "Utiliser un chatbot public pour stocker des données de santé",
+      "Utiliser un LLM pour reformuler un email non sensible, puis relire avant envoi"
+    ],
+    correct: 3,
+    explain: "Un LLM est adapté à la reformulation d’un contenu non sensible, avec relecture humaine."
+  },
+  {
+    theme: "Données sensibles",
+    question: "Quel prompt présente le risque le plus élevé ?",
+    options: [
+      "Résume ce texte fictif pour un public débutant.",
+      "Reformule cet email en supprimant le jargon.",
+      "Analyse l’arrêt maladie de Sophie Martin et propose une réponse RH.",
+      "Propose trois titres pour un article sur l’IA."
+    ],
+    correct: 2,
+    explain: "Le prompt contient une donnée de santé et une personne identifiable. C’est un risque important."
+  },
+  {
+    theme: "Données sensibles",
+    question: "Quelle anonymisation est la plus correcte ?",
+    options: [
+      "Remplacer “Marie Dupont, salariée absente pour dépression” par “Salariée A, situation personnelle sensible supprimée”",
+      "Remplacer seulement le prénom",
+      "Garder le nom mais supprimer la date",
+      "Changer la ponctuation du texte"
+    ],
+    correct: 0,
+    explain: "Il faut supprimer ou neutraliser les éléments permettant d’identifier la personne et la donnée sensible."
+  },
+  {
+    theme: "Données sensibles",
+    question: "Quel type d’information doit déclencher une vigilance particulière avant usage dans une IA ?",
+    options: [
+      "Un slogan public déjà publié",
+      "Un exemple inventé",
+      "Une information RH, médicale, financière ou contractuelle",
+      "Une consigne pédagogique générale"
+    ],
+    correct: 2,
+    explain: "Les informations RH, médicales, financières ou contractuelles peuvent être sensibles ou confidentielles."
+  },
+  {
+    theme: "Données sensibles",
+    question: "Quelle est la meilleure pratique avant d’utiliser un outil IA avec des données professionnelles ?",
+    options: [
+      "Vérifier les règles internes, les paramètres de confidentialité et la nature des données",
+      "Copier-coller le document complet pour gagner du temps",
+      "Tester d’abord avec des données réelles",
+      "Envoyer les mêmes données à plusieurs outils pour comparer"
+    ],
+    correct: 0,
+    explain: "Il faut vérifier les règles internes, les paramètres de l’outil et éviter d’exposer des données sensibles."
+  },
+  {
+    theme: "Données sensibles",
+    question: "Pourquoi une donnée même “professionnelle” peut-elle poser problème ?",
+    options: [
+      "Parce qu’une donnée professionnelle est toujours publique",
+      "Parce qu’elle peut identifier une personne, révéler une information confidentielle ou exposer l’entreprise",
+      "Parce qu’elle empêche toujours l’IA de répondre",
+      "Parce qu’elle doit toujours être publiée"
+    ],
+    correct: 1,
+    explain: "Une donnée professionnelle peut aussi être personnelle, confidentielle ou stratégique."
+  },
+  {
+    theme: "Accessibilité",
+    question: "Quel texte est le plus accessible ?",
+    options: [
+      "Veuillez procéder à l’exécution diligente des modalités subséquentes.",
+      "Merci de suivre les prochaines étapes indiquées ci-dessous.",
+      "Les modalités opérationnelles seront implémentées ultérieurement.",
+      "Il conviendra d’envisager les paramètres afférents."
+    ],
+    correct: 1,
+    explain: "La deuxième phrase est plus simple, directe et compréhensible."
+  },
+  {
+    theme: "Accessibilité",
+    question: "Pourquoi faut-il éviter de transmettre une information uniquement par la couleur ?",
+    options: [
+      "Parce que la couleur augmente toujours le poids du fichier",
+      "Parce que certaines personnes peuvent ne pas percevoir ou distinguer les couleurs",
+      "Parce que le noir et blanc est obligatoire",
+      "Parce que les lecteurs d’écran lisent toutes les couleurs"
+    ],
+    correct: 1,
+    explain: "Une information importante doit aussi être portée par du texte, une icône ou une structure claire."
+  },
+  {
+    theme: "Accessibilité",
+    question: "Quel prompt est le plus adapté pour simplifier un texte sans infantiliser le lecteur ?",
+    options: [
+      "Rends ce texte plus bébé.",
+      "Supprime tous les détails.",
+      "Réécris ce texte avec des phrases courtes, un vocabulaire simple, un ton professionnel et sans perdre le sens initial.",
+      "Fais un résumé drôle."
+    ],
+    correct: 2,
+    explain: "Il faut simplifier sans déformer le sens ni adopter un ton infantilisant."
+  },
+  {
+    theme: "Accessibilité",
+    question: "Dans une note interne, quel choix améliore le plus la lisibilité ?",
+    options: [
+      "Un bloc de texte long sans titres",
+      "Des titres clairs, des listes à puces et une idée par paragraphe",
+      "Des acronymes non expliqués",
+      "Une phrase unique très détaillée"
+    ],
+    correct: 1,
+    explain: "La structure facilite la compréhension et la navigation dans le contenu."
+  },
+  {
+    theme: "Éthique et biais",
+    question: "Quel exemple contient le plus clairement un biais à corriger ?",
+    options: [
+      "Les candidats doivent avoir une expérience en gestion de projet.",
+      "Le poste nécessite une bonne capacité d’organisation.",
+      "Nous recherchons une assistante naturellement patiente et souriante.",
+      "La mission implique des échanges réguliers avec les clients."
+    ],
+    correct: 2,
+    explain: "Cette formulation associe un métier et des qualités à un stéréotype de genre."
+  },
+  {
+    theme: "Éthique et biais",
+    question: "Quelle est la meilleure réaction face à une réponse IA qui généralise un groupe de personnes ?",
+    options: [
+      "La publier si elle est bien écrite",
+      "Demander une reformulation plus neutre, inclusive et justifiée",
+      "Ajouter des adjectifs plus forts",
+      "Supprimer uniquement les accents"
+    ],
+    correct: 1,
+    explain: "Il faut corriger les généralisations et demander une formulation plus neutre."
+  },
+  {
+    theme: "Éthique et biais",
+    question: "Dans quel cas la supervision humaine est-elle la plus importante ?",
+    options: [
+      "Choisir une icône décorative",
+      "Corriger une faute de frappe",
+      "Trier automatiquement des candidatures ou évaluer des personnes",
+      "Proposer trois titres d’article"
+    ],
+    correct: 2,
+    explain: "Les décisions qui affectent des personnes nécessitent une supervision humaine forte."
+  },
+  {
+    theme: "Éthique et biais",
+    question: "Quel réflexe est le plus responsable avant de diffuser un contenu généré par IA ?",
+    options: [
+      "Vérifier les faits, le ton, les biais possibles et l’adéquation avec le public",
+      "Publier rapidement pour gagner du temps",
+      "Conserver les erreurs si le texte est fluide",
+      "Masquer que le contenu concerne des personnes"
+    ],
+    correct: 0,
+    explain: "Un contenu généré doit être relu, vérifié et adapté avant diffusion."
+  },
+  {
+    theme: "Éthique et biais",
+    question: "Quel usage est le plus sensible au regard des risques éthiques et réglementaires ?",
+    options: [
+      "Réécrire une phrase trop longue",
+      "Créer un brouillon de post LinkedIn",
+      "Générer une idée de titre",
+      "Utiliser une IA pour influencer une décision d’accès à un emploi, un service ou un droit"
+    ],
+    correct: 3,
+    explain: "Les usages qui influencent l’accès à un emploi, un service ou un droit sont particulièrement sensibles."
+  },
+  {
+    theme: "Vérification",
+    question: "L’IA fournit une statistique précise sans source. Que faire ?",
+    options: [
+      "La garder si elle semble crédible",
+      "La mettre en gras pour renforcer la confiance",
+      "Demander ou rechercher une source fiable avant utilisation",
+      "La traduire en anglais"
+    ],
+    correct: 2,
+    explain: "Une donnée chiffrée doit être vérifiée avec une source fiable avant diffusion."
+  },
+  {
+    theme: "Vérification",
+    question: "Quelle consigne améliore le plus la fiabilité d’une réponse IA ?",
+    options: [
+      "Réponds vite.",
+      "Donne une réponse certaine même si tu n’es pas sûr.",
+      "Ajoute plus de style.",
+      "Indique les points incertains, les hypothèses et les éléments à vérifier."
+    ],
+    correct: 3,
+    explain: "Demander les incertitudes et les éléments à vérifier aide à mieux contrôler la réponse."
+  }
+];
 
   const container = document.getElementById("eval-questions");
   const resultBox = document.getElementById("eval-resultat");
