@@ -130,6 +130,6 @@ Avant d’envoyer un texte à l’IA, remplacer systématiquement les informatio
 ---
 
 <div class="wiki-actions">
-  <a class="wiki-button primary" href="./communication/">Cas pratique suivant : Communication ➔</a>
+  <a class="wiki-button primary" href="../communication/">Cas pratique suivant : Communication ➔</a>
   <a class="wiki-button" href="../">Vue d’ensemble des cas pratiques</a>
 </div>
