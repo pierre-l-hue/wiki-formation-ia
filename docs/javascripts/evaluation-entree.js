@@ -368,15 +368,18 @@ function initEvaluationEntree() {
     }
   ];
 
-  const container = document.getElementById("eval-questions");
-  const resultBox = document.getElementById("eval-resultat");
-  const correctionBox = document.getElementById("eval-correction");
-  const submitBtn = document.getElementById("eval-submit");
-  const showAnswersBtn = document.getElementById("eval-show-answers");
-  const printBtn = document.getElementById("eval-print");
-  const resetBtn = document.getElementById("eval-reset");
-  const dateInput = document.getElementById("eval-date");
-  const nameInput = document.getElementById("eval-nom");
+  let currentQuestion = 0;
+  const answers = new Array(questions.length).fill(null);
+
+  const container = root.querySelector("#eval-questions");
+  const resultBox = root.querySelector("#eval-resultat");
+  const correctionBox = root.querySelector("#eval-correction");
+  const submitBtn = root.querySelector("#eval-submit");
+  const showAnswersBtn = root.querySelector("#eval-show-answers");
+  const printBtn = root.querySelector("#eval-print");
+  const resetBtn = root.querySelector("#eval-reset");
+  const dateInput = root.querySelector("#eval-date");
+  const nameInput = root.querySelector("#eval-nom");
 
   if (!container || !resultBox || !correctionBox || !submitBtn || !showAnswersBtn || !printBtn || !resetBtn) return;
 
@@ -385,52 +388,120 @@ function initEvaluationEntree() {
     dateInput.value = today;
   }
 
-  function renderQuestions() {
+  submitBtn.style.display = "none";
+
+  function updateSubmitVisibility() {
+    const allAnswered = answers.every(function (answer) {
+      return answer !== null;
+    });
+    submitBtn.style.display = allAnswered ? "inline-block" : "none";
+  }
+
+  function renderQuestion(qIndex) {
+    const q = questions[qIndex];
+    if (!q) return;
+
     container.innerHTML = "";
 
-    questions.forEach(function (q, qIndex) {
-      const card = document.createElement("div");
-      card.className = "eval-question";
+    const progress = document.createElement("div");
+    progress.className = "eval-theme";
+    progress.textContent = "Question " + (qIndex + 1) + " sur " + questions.length;
 
-      const title = document.createElement("h3");
-      title.textContent = "Question " + (qIndex + 1) + " sur " + questions.length;
+    const card = document.createElement("div");
+    card.className = "eval-question";
 
-      const theme = document.createElement("div");
-      theme.className = "eval-theme";
-      theme.textContent = q.theme;
+    const theme = document.createElement("div");
+    theme.className = "eval-theme";
+    theme.textContent = q.theme;
 
-      const questionText = document.createElement("p");
-      questionText.innerHTML = "<strong>" + q.question + "</strong>";
+    const title = document.createElement("h3");
+    title.textContent = "Question " + (qIndex + 1);
 
-      const options = document.createElement("div");
-      options.className = "eval-options";
+    const questionText = document.createElement("p");
+    questionText.innerHTML = "<strong>" + q.question + "</strong>";
 
-      q.options.forEach(function (option, optionIndex) {
-        const label = document.createElement("label");
-        const input = document.createElement("input");
+    const options = document.createElement("div");
+    options.className = "eval-options";
 
-        input.type = "radio";
-        input.name = "question-" + qIndex;
-        input.value = optionIndex;
+    q.options.forEach(function (option, optionIndex) {
+      const label = document.createElement("label");
+      const input = document.createElement("input");
 
-        label.appendChild(input);
-        label.appendChild(document.createTextNode(option));
-        options.appendChild(label);
+      input.type = "radio";
+      input.name = "question-" + qIndex;
+      input.value = optionIndex;
+
+      if (answers[qIndex] === optionIndex) {
+        input.checked = true;
+      }
+
+      input.addEventListener("change", function () {
+        answers[qIndex] = optionIndex;
+        updateSubmitVisibility();
+
+        setTimeout(function () {
+          if (qIndex < questions.length - 1) {
+            currentQuestion += 1;
+            renderQuestion(currentQuestion);
+          }
+        }, 180);
       });
 
-      card.appendChild(theme);
-      card.appendChild(title);
-      card.appendChild(questionText);
-      card.appendChild(options);
-      container.appendChild(card);
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(option));
+      options.appendChild(label);
     });
+
+    const nav = document.createElement("div");
+    nav.className = "eval-actions";
+
+    const prevBtn = document.createElement("button");
+    prevBtn.type = "button";
+    prevBtn.textContent = "Question précédente";
+    prevBtn.style.background = "var(--md-default-bg-color, #fff)";
+    prevBtn.style.color = "var(--md-primary-fg-color, #1a5fb4)";
+    prevBtn.style.display = qIndex === 0 ? "none" : "inline-block";
+
+    prevBtn.addEventListener("click", function () {
+      if (currentQuestion > 0) {
+        currentQuestion -= 1;
+        renderQuestion(currentQuestion);
+      }
+    });
+
+    const nextBtn = document.createElement("button");
+    nextBtn.type = "button";
+    nextBtn.textContent = "Question suivante";
+    nextBtn.style.display = qIndex < questions.length - 1 ? "inline-block" : "none";
+
+    if (answers[qIndex] === null) {
+      nextBtn.disabled = true;
+      nextBtn.style.opacity = "0.5";
+      nextBtn.style.cursor = "not-allowed";
+    }
+
+    nextBtn.addEventListener("click", function () {
+      if (answers[qIndex] !== null && currentQuestion < questions.length - 1) {
+        currentQuestion += 1;
+        renderQuestion(currentQuestion);
+      }
+    });
+
+    nav.appendChild(prevBtn);
+    nav.appendChild(nextBtn);
+
+    card.appendChild(theme);
+    card.appendChild(title);
+    card.appendChild(questionText);
+    card.appendChild(options);
+    card.appendChild(nav);
+
+    container.appendChild(progress);
+    container.appendChild(card);
   }
 
   function getAnswers() {
-    return questions.map(function (_, qIndex) {
-      const selected = root.querySelector("input[name='question-" + qIndex + "']:checked");
-      return selected ? Number(selected.value) : null;
-    });
+    return answers;
   }
 
   function getLevel(score) {
@@ -462,20 +533,23 @@ function initEvaluationEntree() {
   }
 
   function calculateScore() {
-    const answers = getAnswers();
+    const values = getAnswers();
     let score = 0;
 
-    answers.forEach(function (answer, index) {
-      if (answer === questions[index].correct) score += 1;
+    values.forEach(function (answer, index) {
+      if (answer === questions[index].correct) {
+        score += 1;
+      }
     });
 
-    return { score, answers };
+    return { score: score, answers: values };
   }
 
   function renderResult() {
     const data = calculateScore();
+    const score = data.score;
     const unanswered = data.answers.filter(function (answer) { return answer === null; }).length;
-    const level = getLevel(data.score);
+    const level = getLevel(score);
     const nom = nameInput && nameInput.value ? nameInput.value : "Non renseigné";
     const date = dateInput && dateInput.value ? dateInput.value : "Non renseignée";
 
@@ -487,7 +561,7 @@ function initEvaluationEntree() {
       "<h2>Résultat</h2>" +
       "<p><strong>Participant :</strong> " + nom + "</p>" +
       "<p><strong>Date :</strong> " + date + "</p>" +
-      "<p><strong>Score :</strong> " + data.score + " / " + questions.length + "</p>" +
+      "<p><strong>Score :</strong> " + score + " / " + questions.length + "</p>" +
       "<p><strong>Niveau estimé :</strong> " + level.label + "</p>" +
       "<p>" + level.message + "</p>" +
       (unanswered > 0 ? "<p><strong>Questions sans réponse :</strong> " + unanswered + "</p>" : "") +
@@ -498,18 +572,21 @@ function initEvaluationEntree() {
 
   function renderCorrection() {
     const data = calculateScore();
+    const userAnswers = data.answers;
 
     correctionBox.style.display = "block";
     correctionBox.innerHTML = "<h2>Correction détaillée</h2>";
 
     questions.forEach(function (q, index) {
-      const userAnswer = data.answers[index];
+      const userAnswer = userAnswers[index];
       const isCorrect = userAnswer === q.correct;
+      const item = document.createElement("div");
+
+      item.className = "eval-correction-item";
+
       const userAnswerText = userAnswer === null ? "Aucune réponse" : q.options[userAnswer];
       const correctAnswerText = q.options[q.correct];
 
-      const item = document.createElement("div");
-      item.className = "eval-correction-item";
       item.innerHTML =
         "<h3>Question " + (index + 1) + " — " + q.theme + "</h3>" +
         "<p><strong>" + q.question + "</strong></p>" +
@@ -527,18 +604,25 @@ function initEvaluationEntree() {
   showAnswersBtn.addEventListener("click", renderCorrection);
 
   printBtn.addEventListener("click", function () {
-    if (resultBox.style.display === "none") renderResult();
-    if (correctionBox.style.display === "none") renderCorrection();
+    if (resultBox.style.display === "none") {
+      renderResult();
+    }
+
+    if (correctionBox.style.display === "none") {
+      renderCorrection();
+    }
+
     window.print();
   });
 
   resetBtn.addEventListener("click", function () {
-    root.querySelectorAll("input[type='radio']").forEach(function (input) {
-      input.checked = false;
-    });
+    for (let i = 0; i < answers.length; i += 1) {
+      answers[i] = null;
+    }
+
+    currentQuestion = 0;
 
     if (nameInput) nameInput.value = "";
-
     if (dateInput) {
       const today = new Date().toISOString().slice(0, 10);
       dateInput.value = today;
@@ -548,13 +632,16 @@ function initEvaluationEntree() {
     correctionBox.style.display = "none";
     showAnswersBtn.style.display = "none";
     printBtn.style.display = "none";
+    submitBtn.style.display = "none";
     resultBox.innerHTML = "";
     correctionBox.innerHTML = "";
 
+    renderQuestion(currentQuestion);
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  renderQuestions();
+  renderQuestion(currentQuestion);
+  updateSubmitVisibility();
 }
 
 if (typeof document$ !== "undefined") {
