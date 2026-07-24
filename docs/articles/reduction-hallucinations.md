@@ -1,160 +1,171 @@
-# 🛡️ Réduire les hallucinations & Garantir la factualité de l'IA
+# Réduire les hallucinations et garantir la factualité de l’IA
 
-Pourquoi les modèles de langage inventent-ils parfois des références bibliographiques, des dates ou des faits historiques avec une assurance déconcertante ?
+*Comprendre pourquoi une IA peut inventer des faits et comment limiter ce risque dans la pratique.*
 
-Ce phénomène s'appelle une **hallucination**. Il ne s'agit pas d'un "bug", mais du fonctionnement intrinsèque des LLM : ils prédisent statistiquement le mot suivant le plus probable, sans vérifier si ce mot correspond à une vérité scientifique ou historique.
+<div class="summary-box" markdown="block">
+<h3>🎯 Ce que cette page apporte</h3>
 
----
-
-## 🔍 1. Comprendre pourquoi l'IA hallucine
-
-Les LLM ne sont pas des moteurs de recherche : ce sont des **moteurs de plausibilité**.
-
-> **À garder en tête :**
-> L'IA cherche à générer un texte qui *a l'air vrai* et fluide, plutôt qu'à vérifier une source factuelle autonome.
-
-Les 3 causes majeures d'hallucination :
-* **Manque de contexte :** Le prompt est trop flou, l'IA "comble les trous" avec de l'imagination.
-* **Complexité / Raisonnement poussé :** Une question trop directe sans étape de réflexion intermédiaire.
-* **Pression de réponse :** L'absence d'une porte de sortie explicite (ex: *"si tu ne sais pas, dis-le"*).
+- comprendre pourquoi un LLM peut produire une réponse fausse mais plausible ;
+- repérer les principales causes d’hallucination ;
+- appliquer des garde-fous simples dans les prompts ;
+- tester l’effet du cadrage sur le niveau de risque.
+</div>
 
 ---
 
-## 📊 2. Comparatif des techniques Anti-Hallucination
+## 1. Comprendre pourquoi l’IA hallucine
 
-| Technique | Niveau d'effort | Réduction des erreurs |
+Les LLM ne sont pas des moteurs de recherche.  
+Ce sont avant tout des **moteurs de plausibilité** : ils produisent la suite de texte la plus probable, sans vérifier automatiquement la vérité du contenu. [web:94]
+
+<div class="warning-practice-box" markdown="block">
+<h3>🛑 À garder en tête</h3>
+
+L’IA cherche d’abord à générer un texte qui **semble vrai** et fluide.
+
+Sans source fiable ou sans garde-fou clair, elle peut donc :
+- inventer une référence ;
+- se tromper sur une date ;
+- affirmer un fait inexact avec assurance.
+</div>
+
+### Les 3 causes majeures d’hallucination
+
+<div class="wiki-grid">
+
+<div class="wiki-card" markdown="block">
+<h3>Manque de contexte</h3>
+
+Si le prompt est trop flou, l’IA comble les trous avec ce qui lui paraît plausible.
+</div>
+
+<div class="wiki-card" markdown="block">
+<h3>Question complexe</h3>
+
+Une demande difficile, sans étapes intermédiaires, augmente le risque d’erreur ou de saut logique.
+</div>
+
+<div class="wiki-card" markdown="block">
+<h3>Absence de porte de sortie</h3>
+
+Si on ne lui permet pas de dire qu’elle ne sait pas, l’IA peut préférer inventer une réponse plutôt que rester incomplète.
+</div>
+
+</div>
+
+---
+
+## 2. Comparatif des techniques anti-hallucination
+
+| Technique | Niveau d’effort | Réduction des erreurs |
 | :--- | :--- | :--- |
-| **Consigne d'incertitude** (*"Si inconnu, réponds N/A"*) | Faible | ~40% |
-| **Génération ancrée / RAG** (Injecter le document source) | Moyen | ~85% |
-| **Chain-of-Thought** (Forcer la justification pas à pas) | Moyen | ~60% |
-| **Double vérification automatisée** (Self-Consistency) | Élevé | ~90% |
+| **Consigne d’incertitude** | Faible | ~40% |
+| **Génération ancrée / RAG** | Moyen | ~85% |
+| **Chain-of-Thought** | Moyen | ~60% |
+| **Double vérification automatisée** | Élevé | ~90% |
+
+<div class="good-reflex-box" markdown="block">
+<h3>✅ Bon réflexe</h3>
+
+Quand l’enjeu est important, la meilleure protection reste l’**ancrage documentaire** :
+- fournir le texte source ;
+- demander des citations exactes ;
+- distinguer clairement le fait, l’interprétation et la conclusion.
+</div>
 
 ---
 
-## 🛠️ 3. Les 4 règles d'or du Prompt Factuel
+## 3. Les 4 règles d’or du prompt factuel
 
-1. **Donnez la permission d'ignorer :** Ajoutez toujours : *"Si l'information n'est pas présente dans le texte ou si tu as un doute, réponds 'Information non disponible' au lieu de deviner."*
-2. **Injectez vos propres sources (RAG) :** Au lieu de demander *"Qui est le directeur de l'entreprise X en 2026 ?"*, fournissez l'organigramme exact dans le prompt.
-3. **Séparez le fait de l'analyse :** Demandez d'abord d'extraire les citations exactes du texte source avant de formuler une conclusion.
-4. **Vérifiez les dates et les chiffres :** Traitez toujours les calculs et les citations précises comme nécessitant une validation humaine.
+<div class="wiki-grid">
+
+<div class="wiki-card" markdown="block">
+<h3>1. Autoriser l’incertitude</h3>
+
+Ajouter une consigne explicite du type :
+
+`Si l’information est absente ou incertaine, réponds "Information non disponible" au lieu de deviner.`
+</div>
+
+<div class="wiki-card" markdown="block">
+<h3>2. Fournir les sources</h3>
+
+Injecter le document ou l’extrait de référence directement dans le prompt pour limiter l’invention.
+</div>
+
+<div class="wiki-card" markdown="block">
+<h3>3. Séparer fait et analyse</h3>
+
+Demander d’abord l’extraction des éléments exacts, puis seulement ensuite une interprétation ou une conclusion.
+</div>
+
+<div class="wiki-card" markdown="block">
+<h3>4. Vérifier chiffres et dates</h3>
+
+Tout ce qui touche aux calculs, montants, références ou citations précises doit être relu et validé humainement.
+</div>
+
+</div>
 
 ---
 
-## 🧪 Laboratoire : Testez l'impact du cadrage sur les hallucinations
+## 4. Laboratoire : testez le niveau de risque
 
-<div style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; margin: 25px 0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-  <h3 style="margin-top:0; color: #1e293b; display: flex; align-items: center; gap: 8px;">
-    🧪 <span>Simulateur : Taux de risque d'hallucination</span>
-  </h3>
-  <p style="font-size: 0.9em; color: #64748b; margin-bottom: 16px;">
-    Cochez les garde-fous ajoutés à votre prompt pour voir chuter le risque d'hallucination.
-  </p>
+<div class="wiki-card" markdown="block">
+<h3>Simulateur : risque d’hallucination</h3>
 
-  <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
-    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.9em; color: #334155;">
-      <input type="checkbox" id="chk1" onchange="updateRiskCalc()" style="width: 18px; height: 18px; cursor: pointer;">
-      <strong>Consigne de secours :</strong> Autoriser l'IA à dire "Je ne sais pas".
-    </label>
-    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.9em; color: #334155;">
-      <input type="checkbox" id="chk2" onchange="updateRiskCalc()" style="width: 18px; height: 18px; cursor: pointer;">
-      <strong>Ancrage (RAG) :</strong> Fournir le document source directement dans le prompt.
-    </label>
-    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.9em; color: #334155;">
-      <input type="checkbox" id="chk3" onchange="updateRiskCalc()" style="width: 18px; height: 18px; cursor: pointer;">
-      <strong>Citation obligatoire :</strong> Demander à l'IA de citer la phrase exacte source.
-    </label>
-  </div>
+Coche les garde-fous ajoutés à ton prompt pour voir comment le risque diminue.
+</div>
 
-  <div style="background: #f8fafc; padding: 16px; border-radius: 8px; text-align: center; border: 1px solid #cbd5e1;">
-    <div style="font-size: 0.8em; color: #64748b; font-weight: 600; text-transform: uppercase;">Niveau de risque d'hallucination estimé</div>
-    <div id="riskScore" style="font-size: 1.8em; font-weight: bold; color: #dc2626; margin: 6px 0;">Élevé (85%)</div>
-    <div id="riskMessage" style="font-size: 0.85em; color: #475569;">Prompt trop ouvert : l'IA va inventer pour combler le manque de faits.</div>
+<div class="prompt-generator hallucination-risk-calculator">
+  <label><input type="checkbox" id="chk1"> Consigne de secours : autoriser l’IA à dire « Je ne sais pas »</label>
+  <label><input type="checkbox" id="chk2"> Ancrage documentaire : fournir la source dans le prompt</label>
+  <label><input type="checkbox" id="chk3"> Citation obligatoire : demander la phrase exacte source</label>
+
+  <div id="riskBox" class="warning-practice-box" style="margin-top: 18px;">
+    <h3 id="riskScore">Risque élevé (85%)</h3>
+    <p id="riskMessage">Prompt trop ouvert : l’IA risque d’inventer pour combler le manque de faits.</p>
   </div>
 </div>
 
-<script>
-function updateRiskCalc() {
-  const c1 = document.getElementById("chk1").checked;
-  const c2 = document.getElementById("chk2").checked;
-  const c3 = document.getElementById("chk3").checked;
-
-  let score = 85;
-  if (c1) score -= 25;
-  if (c2) score -= 40;
-  if (c3) score -= 15;
-
-  const scoreEl = document.getElementById("riskScore");
-  const msgEl = document.getElementById("riskMessage");
-
-  if (score > 60) {
-    scoreEl.textContent = `Élevé (${score}%)`;
-    scoreEl.style.color = "#dc2626";
-    msgEl.textContent = "Prompt trop ouvert : l'IA va inventer pour combler le manque de faits.";
-  } else if (score > 25) {
-    scoreEl.textContent = `Modéré (${score}%)`;
-    scoreEl.style.color = "#d97706";
-    msgEl.textContent = "Bon encadrement, mais attention aux détails non documentés.";
-  } else {
-    scoreEl.textContent = `Très faible (${score}%)`;
-    scoreEl.style.color = "#16a34a";
-    msgEl.textContent = "Excellent ! L'IA est étroitement bridée par vos sources et consignes.";
-  }
-}
-</script>
-
 ---
 
-## 🧩 Mini-Quiz : Teste tes réflexes
+## 5. Mini-quiz
 
-<div style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; margin: 25px 0;">
-  <h3 style="margin-top:0; color: #1e293b;">🧩 Question Flash</h3>
-  <p id="quizQuestion" style="font-weight: 600; font-size: 0.95em; color: #334155; margin-bottom: 12px;">
-    Quelle est la méthode la plus simple et immédiate pour empêcher une IA d'inventer une réponse quand elle ne connaît pas la réponse ?
-  </p>
+<div class="wiki-card" markdown="block">
+<h3>Question flash</h3>
 
-  <div id="quizOptions" style="display: flex; flex-direction: column; gap: 8px;">
-    <button onclick="checkQuizAnswer(this, false)" style="text-align: left; background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 0.9em; transition: all 0.2s;">
-      A) Lui demander poliment d'être très honnête et de faire très attention.
+Quelle est la méthode la plus simple et immédiate pour empêcher une IA d’inventer une réponse quand elle ne connaît pas la réponse ?
+</div>
+
+<div class="prompt-generator hallucination-quiz">
+  <div id="quizOptions" style="display: grid; gap: 10px;">
+    <button type="button" class="wiki-button" data-correct="false">
+      A) Lui demander poliment d’être très honnête et de faire très attention.
     </button>
-    <button onclick="checkQuizAnswer(this, true)" style="text-align: left; background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 0.9em; transition: all 0.2s;">
-      B) Lui donner une consigne de secours explicite (ex: "Si l'information est absente, réponds 'Inconnu'").
+
+    <button type="button" class="wiki-button" data-correct="true">
+      B) Lui donner une consigne de secours explicite, par exemple : « Si l’information est absente, réponds Inconnu ».
     </button>
-    <button onclick="checkQuizAnswer(this, false)" style="text-align: left; background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 0.9em; transition: all 0.2s;">
-      C) Augmenter la longueur du prompt pour lui donner plus d'espace d'écriture.
+
+    <button type="button" class="wiki-button" data-correct="false">
+      C) Augmenter la longueur du prompt pour lui donner plus d’espace d’écriture.
     </button>
   </div>
 
-  <div id="quizFeedback" style="margin-top: 12px; display: none; font-weight: 600; font-size: 0.9em;"></div>
+  <div id="quizFeedback" class="summary-box" style="display: none; margin-top: 16px;"></div>
 </div>
-
-<script>
-function checkQuizAnswer(btn, isCorrect) {
-  const feedback = document.getElementById("quizFeedback");
-  const buttons = document.querySelectorAll("#quizOptions button");
-  
-  buttons.forEach(b => {
-    b.disabled = true;
-    b.style.opacity = "0.6";
-  });
-
-  btn.style.opacity = "1";
-  feedback.style.display = "block";
-
-  if (isCorrect) {
-    btn.style.background = "#dcfce7";
-    btn.style.borderColor = "#22c55e";
-    feedback.style.color = "#15803d";
-    feedback.innerHTML = "✅ Correct ! Offrir une 'issue de secours' élimine la pression qui pousse le modèle à fabriquer une réponse plausible.";
-  } else {
-    btn.style.background = "#fee2e2";
-    btn.style.borderColor = "#ef4444";
-    feedback.style.color = "#b91c1c";
-    feedback.innerHTML = "❌ Dommage ! La bonne réponse est la B : sans porte de sortie explicite, le modèle va préférer inventer une réponse plausible que d'avouer son ignorance.";
-  }
-}
-</script>
 
 ---
 
-!!! tip "💡 À retenir"
-    Ne faites jamais confiance aveuglément aux faits bruts fournis par une IA sans source fournie par vos soins. L'ancrage documentaire est la meilleure arme anti-hallucination !
+<div class="summary-box" markdown="block">
+<h3>💡 À retenir</h3>
+
+Ne pas faire confiance aveuglément aux faits bruts produits par une IA.
+
+Pour réduire les hallucinations :
+- cadrer clairement ;
+- autoriser l’IA à ne pas savoir ;
+- fournir les sources ;
+- vérifier les éléments sensibles avant diffusion.
+</div>
