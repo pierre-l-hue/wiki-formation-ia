@@ -1,4 +1,4 @@
-![Illustration pour une formation en IA avec deux personnes échangeant autour d'une ampoule connectée et du titre FORMATION IA](./assets/image-accueil.png)
+![Illustration pour une formation en IA avec deux personnes échangeant autour d'une ampoule connectée et du titre FORMATION IA](./assets/image-accueil.png){ .home-hero-image }
 
 # Wiki Formation IA générative
 
