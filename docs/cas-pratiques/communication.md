@@ -2,7 +2,7 @@
 
 Dans la communication et le marketing, produire des contenus utiles, cohérents et engageants demande du temps, de la méthode et de la régularité. Ce cas pratique montre comment utiliser l’IA comme partenaire de travail pour accélérer la rédaction, structurer les idées et décliner un même message sur plusieurs canaux.
 
-<div class="summary-box">
+<div class="summary-box" markdown="block">
 <h3>🎯 Objectifs opérationnels</h3>
 
 - Accélérer la création de contenu : passer d’une idée brute à un premier brouillon structuré en quelques secondes.
@@ -16,7 +16,7 @@ Dans la communication et le marketing, produire des contenus utiles, cohérents 
 
 Un lancement, une campagne ou une prise de parole approche. Il faut trouver un angle, rédiger vite, puis adapter le message pour plusieurs formats sans perdre la cohérence de marque.
 
-<div class="real-life-box">
+<div class="real-life-box" markdown="block">
 <h3>💼 Dans la vraie vie</h3>
 
 L’IA n’a ni l’histoire, ni la sensibilité, ni l’expérience réelle de la marque.  
@@ -30,31 +30,31 @@ Elle sert à brainstormer, structurer et produire une première base, puis l’h
 <div class="wiki-grid">
 
 <div class="wiki-card">
-<div class="wiki-card-icon">💡</div>
-<h3>Angles et idées</h3>
-<p>Générer rapidement des sujets, des titres, des accroches et des pistes de contenu.</p>
-<span class="wiki-badge success">Gain de temps : très élevé</span>
+  <div class="wiki-card-icon">💡</div>
+  <h3>Angles et idées</h3>
+  <p>Générer rapidement des sujets, des titres, des accroches et des pistes de contenu.</p>
+  <span class="wiki-badge success">Gain de temps : très élevé</span>
 </div>
 
 <div class="wiki-card">
-<div class="wiki-card-icon">📱</div>
-<h3>Posts réseaux sociaux</h3>
-<p>Rédiger des publications adaptées aux codes de LinkedIn, Instagram ou X.</p>
-<span class="wiki-badge success">Gain de temps : élevé</span>
+  <div class="wiki-card-icon">📱</div>
+  <h3>Posts réseaux sociaux</h3>
+  <p>Rédiger des publications adaptées aux codes de LinkedIn, Instagram ou X.</p>
+  <span class="wiki-badge success">Gain de temps : élevé</span>
 </div>
 
 <div class="wiki-card">
-<div class="wiki-card-icon">📧</div>
-<h3>Newsletters et emails</h3>
-<p>Concevoir des objets d’email clairs et des messages engageants pour différentes cibles.</p>
-<span class="wiki-badge">Gain de temps : élevé</span>
+  <div class="wiki-card-icon">📧</div>
+  <h3>Newsletters et emails</h3>
+  <p>Concevoir des objets d’email clairs et des messages engageants pour différentes cibles.</p>
+  <span class="wiki-badge">Gain de temps : élevé</span>
 </div>
 
 <div class="wiki-card">
-<div class="wiki-card-icon">🔄</div>
-<h3>Déclinaison de contenu</h3>
-<p>Transformer un contenu long en plusieurs formats courts pour différents canaux.</p>
-<span class="wiki-badge success">Gain de temps : très élevé</span>
+  <div class="wiki-card-icon">🔄</div>
+  <h3>Déclinaison de contenu</h3>
+  <p>Transformer un contenu long en plusieurs formats courts pour différents canaux.</p>
+  <span class="wiki-badge success">Gain de temps : très élevé</span>
 </div>
 
 </div>
@@ -93,7 +93,7 @@ Authentique, professionnel, dynamique, sans jargon inutile.
 
 ## Vigilance sur les contenus publics
 
-<div class="warning-practice-box">
+<div class="warning-practice-box" markdown="block">
 <h3>🛑 À éviter absolument</h3>
 
 Pour des contenus marketing ou communication, ne jamais :
@@ -104,7 +104,7 @@ Pour des contenus marketing ou communication, ne jamais :
 - Divulguer dans un prompt un projet confidentiel, une campagne non annoncée ou un visuel non validé.
 </div>
 
-<div class="good-reflex-box">
+<div class="good-reflex-box" markdown="block">
 <h3>✅ Le bon réflexe : injecter la voix de la marque</h3>
 
 Pour éviter un résultat générique, enrichir le prompt avec des repères concrets :
@@ -118,15 +118,15 @@ Pour éviter un résultat générique, enrichir le prompt avec des repères conc
 
 ## Décliner un contenu intelligemment
 
-<div class="real-life-box">
+<div class="real-life-box" markdown="block">
 <h3>🧩 Exemple de déclinaison</h3>
 
 À partir d’un article de fond ou d’un compte rendu long, l’IA peut aider à produire :
 
-- un post LinkedIn,
-- un email ou une newsletter,
-- un pitch de présentation,
-- un résumé pour le site web,
+- un post LinkedIn ;
+- un email ou une newsletter ;
+- un pitch de présentation ;
+- un résumé pour le site web ;
 - une série de messages courts pour les réseaux sociaux.
 
 L’objectif n’est pas de dupliquer le même texte partout, mais d’adapter le même message au bon canal et au bon public.
@@ -136,7 +136,7 @@ L’objectif n’est pas de dupliquer le même texte partout, mais d’adapter l
 
 ## Checklist de validation communication
 
-<div class="summary-box">
+<div class="summary-box" markdown="block">
 <h3>Avant de publier le contenu</h3>
 
 1. L’accroche capte-t-elle l’attention dès les premières lignes ?
