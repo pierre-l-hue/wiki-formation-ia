@@ -1,32 +1,27 @@
-# Cas pratique — Assistant administratif
-
+Cas pratique — Assistant administratif
 Dans une PME, la gestion administrative au quotidien exige réactivité, rigueur et professionnalisme. Ce cas pratique montre comment utiliser l’IA comme un copilote d’organisation pour traiter les tâches chronophages, tout en protégeant les données sensibles.
 
-<div class="summary-box">
+<div class="summary-box" markdown="block">
 <h3>🎯 Objectifs opérationnels</h3>
 
-- Accélérer la gestion documentaire : rédiger, synthétiser et reformuler les écrits en quelques secondes.
-- Conserver un ton irréprochable : adapter le niveau de langage selon les interlocuteurs (clients, fournisseurs, direction).
-- Garantir la confidentialité : appliquer des règles strictes d’anonymisation avant tout envoi de prompt.
+Accélérer la gestion documentaire : rédiger, synthétiser et reformuler les écrits en quelques secondes.
+
+Conserver un ton irréprochable : adapter le niveau de langage selon les interlocuteurs (clients, fournisseurs, direction).
+
+Garantir la confidentialité : appliquer des règles strictes d’anonymisation avant tout envoi de prompt.
 </div>
 
----
-
-## Situation de départ
-
+Situation de départ
 Dans une PME dynamique, l’assistant administratif jongle entre la boîte de réception, les comptes rendus de réunion, la remise au propre de documents internes et le traitement des sollicitations clients.
 
-<div class="real-life-box">
+<div class="real-life-box" markdown="block">
 <h3>💼 Dans la vraie vie</h3>
 
-L’IA ne remplace pas l’assistant administratif.  
+L’IA ne remplace pas l’assistant administratif.
 Elle sert à générer une première version propre en 30 secondes, puis l’humain garde le contrôle stratégique et valide le message final.
 </div>
 
----
-
-## Tâches ciblées et opportunités IA
-
+Tâches ciblées et opportunités IA
 <div class="wiki-grid">
 
 <div class="wiki-card">
@@ -59,13 +54,10 @@ Elle sert à générer une première version propre en 30 secondes, puis l’hum
 
 </div>
 
----
-
-## Prompt modèle (Framework CROFT)
-
+Prompt modèle (Framework CROFT)
 Ce modèle de prompt sert à reformuler ou préparer une communication client de façon rapide et structurée.
 
-```text
+text
 CONTEXTE :
 Je suis assistant administratif dans une PME du secteur [indiquer le secteur].
 Je dois répondre à un client concernant une demande d’information ou un retard.
@@ -87,49 +79,48 @@ Professionnel, bienveillant, direct, sans jargon inutile.
 
 TEXTE À REFORMULER (ANONYMISÉ) :
 "[Coller ici le texte anonymisé]"
-```
-
----
-
-## Vigilance sur les données sensibles
-
-<div class="warning-practice-box">
+Vigilance sur les données sensibles
+<div class="warning-practice-box" markdown="block">
 <h3>🛑 À éviter absolument</h3>
 
 Ne jamais coller directement dans un modèle d’IA un email ou un document contenant :
 
-- Des noms complets de clients, collaborateurs ou fournisseurs.
-- Des adresses email, numéros de téléphone ou coordonnées personnelles.
-- Des montants financiers précis (devis, factures, salaires).
-- Des références contractuelles ou des clauses de confidentialité.
+Des noms complets de clients, collaborateurs ou fournisseurs.
+
+Des adresses email, numéros de téléphone ou coordonnées personnelles.
+
+Des montants financiers précis (devis, factures, salaires).
+
+Des références contractuelles ou des clauses de confidentialité.
 </div>
 
-<div class="good-reflex-box">
+<div class="good-reflex-box" markdown="block">
 <h3>✅ Le bon réflexe : la technique du masque</h3>
 
 Avant d’envoyer un texte à l’IA, remplacer systématiquement les informations confidentielles par des éléments génériques :
 
-- `Marie DUPONT` ➔ `[Client A]`
-- `12 500 € HT` ➔ `[Montant du devis]`
-- `Contrat signé le 14 mai` ➔ `[Date du contrat]`
-- `Société ACME Corp` ➔ `[Entreprise X]`
+Marie DUPONT ➔ [Client A]
+
+12 500 € HT ➔ [Montant du devis]
+
+Contrat signé le 14 mai ➔ [Date du contrat]
+
+Société ACME Corp ➔ [Entreprise X]
 </div>
 
----
-
-## Checklist de validation administrative
-
-<div class="summary-box">
+Checklist de validation administrative
+<div class="summary-box" markdown="block">
 <h3>Avant d’envoyer le document généré par l’IA</h3>
 
-1. L’IA a-t-elle inventé des faits ou des engagements non prévus ? *(vigilance sur les hallucinations)*
-2. Le ton correspond-il à la culture de l’entreprise et à l’interlocuteur ?
-3. Les variables masquées (comme `[Client A]`) ont-elles été réintégrées correctement avec les vraies données ?
-</div>
+L’IA a-t-elle inventé des faits ou des engagements non prévus ? (vigilance sur les hallucinations)
 
----
+Le ton correspond-il à la culture de l’entreprise et à l’interlocuteur ?
+
+Les variables masquées (comme [Client A]) ont-elles été réintégrées correctement avec les vraies données ?
+</div>
 
 <div class="wiki-actions">
-  <a class="wiki-button primary" href="./communication/">Cas pratique suivant : Communication ➔</a>
-  <a class="wiki-button" href="../">Vue d’ensemble des cas pratiques</a>
+<a class="wiki-button primary" href="./communication/">Cas pratique suivant : Communication ➔</a>
+<a class="wiki-button" href="../">Vue d’ensemble des cas pratiques</a>
 </div>
+
