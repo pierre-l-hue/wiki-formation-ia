@@ -35,6 +35,7 @@ theme:
 
 extra_javascript:
   - javascripts/progress.js
+  - javascripts/prompt-generator.js
   
 extra_css:
   - stylesheets/extra.css
