@@ -10,7 +10,6 @@
   </div>
 
   <div>
-    <h1 style="margin: 0 0 8px 0; border: none; padding: 0;">Mistral</h1>
     <a href="https://gemini.google.com" target="_blank" rel="noopener" class="md-button md-button--primary" style="font-size: 12px; padding: 4px 12px; font-weight: 600;">
       🌐 Accéder à l’outil (gemini.google.com) ↗
     </a>
