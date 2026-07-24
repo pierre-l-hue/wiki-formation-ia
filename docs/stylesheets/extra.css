@@ -345,3 +345,49 @@
 .prompt-generator .wiki-button.primary:active {
   color: var(--md-primary-bg-color) !important;
 }
+/* =========================
+   Navigation latérale
+   ========================= */
+
+@media screen and (min-width: 76.25em) {
+
+  .md-sidebar--primary {
+    width: 18rem;
+  }
+
+  .md-sidebar__inner {
+    padding-top: 0.6rem;
+  }
+
+  .md-nav--primary .md-nav__item {
+    margin: 0.18rem 0;
+  }
+
+  .md-nav--primary > .md-nav__list > .md-nav__item {
+    margin: 0.65rem 0 0.85rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  }
+
+  .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
+  }
+
+  .md-nav--primary .md-nav__item .md-nav {
+    margin-top: 0.35rem;
+    padding-left: 0.35rem;
+  }
+
+  .md-nav--primary .md-nav__item .md-nav__link {
+    padding-top: 0.22rem;
+    padding-bottom: 0.22rem;
+    border-radius: 8px;
+  }
+
+  .md-nav__link--active {
+    background: rgba(33, 150, 243, 0.08);
+    padding-left: 0.4rem;
+  }
+}
