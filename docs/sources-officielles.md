@@ -1,9 +1,12 @@
 # Sources officielles
 
-Cette page regroupe les sources à consulter pour vérifier les informations importantes du wiki.
+<div class="summary-box" markdown="block">
+<h3>🎯 Pourquoi cette page est importante</h3>
 
-Les outils IA, les règles de confidentialité et les obligations réglementaires peuvent évoluer.  
-Avant une session de formation ou une mise à jour du wiki, pensez à vérifier les sources ci-dessous.
+Les outils IA, les règles de confidentialité et les obligations réglementaires évoluent rapidement.
+
+Avant une session de formation ou une mise à jour du wiki, il est recommandé de vérifier les sources ci-dessous.
+</div>
 
 ---
 
@@ -37,7 +40,7 @@ Ces sources permettent de vérifier les règles officielles liées à l’IA Act
 
 Les politiques de confidentialité des outils IA peuvent changer.
 
-Avant de recommander un outil pour un usage professionnel, vérifiez toujours :
+Avant de recommander un outil pour un usage professionnel, vérifier notamment :
 
 - si les données sont utilisées pour entraîner les modèles ;
 - si l’historique peut être désactivé ;
