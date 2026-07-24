@@ -35,7 +35,10 @@ theme:
 
 extra_javascript:
   - javascripts/progress.js
-
+  
+extra_css:
+  - stylesheets/extra.css
+  
 nav:
   - Accueil: index.md
   - Certification RS6776:
