@@ -74,3 +74,182 @@
 .home-button.primary:hover {
   filter: brightness(0.95);
 }
+/* =========================
+   Composants réutilisables
+   ========================= */
+
+.wiki-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.wiki-card {
+  padding: 20px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 16px;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.wiki-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.wiki-card p:last-child {
+  margin-bottom: 0;
+}
+
+.wiki-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  font-size: 24px;
+  background: rgba(33, 150, 243, 0.12);
+  margin-bottom: 10px;
+}
+
+/* =========================
+   Blocs pratiques
+   ========================= */
+
+.real-life-box,
+.good-reflex-box,
+.warning-practice-box,
+.summary-box {
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin: 22px 0;
+  border-left: 5px solid;
+}
+
+.real-life-box {
+  background: rgba(33, 150, 243, 0.10);
+  border-left-color: #2196f3;
+}
+
+.good-reflex-box {
+  background: rgba(76, 175, 80, 0.12);
+  border-left-color: #4caf50;
+}
+
+.warning-practice-box {
+  background: rgba(255, 152, 0, 0.14);
+  border-left-color: #ff9800;
+}
+
+.summary-box {
+  background: rgba(103, 58, 183, 0.10);
+  border-left-color: #673ab7;
+}
+
+.real-life-box h3,
+.good-reflex-box h3,
+.warning-practice-box h3,
+.summary-box h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   Badges
+   ========================= */
+
+.wiki-badge {
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(33, 150, 243, 0.12);
+  color: #1a5fb4;
+}
+
+.wiki-badge.success {
+  background: rgba(76, 175, 80, 0.14);
+  color: #2e7d32;
+}
+
+.wiki-badge.warning {
+  background: rgba(255, 152, 0, 0.16);
+  color: #b85c00;
+}
+
+.wiki-badge.danger {
+  background: rgba(198, 40, 40, 0.12);
+  color: #c62828;
+}
+
+/* =========================
+   Boutons réutilisables
+   ========================= */
+
+.wiki-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.wiki-button {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid var(--md-primary-fg-color);
+  border-radius: 999px;
+  color: var(--md-primary-fg-color);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.wiki-button:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.wiki-button.primary {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+/* =========================
+   Tables plus lisibles
+   ========================= */
+
+.md-typeset table:not([class]) {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background: rgba(33, 150, 243, 0.10);
+  font-weight: 700;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 700px) {
+  .wiki-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wiki-card {
+    padding: 18px;
+  }
+
+  .real-life-box,
+  .good-reflex-box,
+  .warning-practice-box,
+  .summary-box {
+    padding: 16px;
+  }
+}
